@@ -1,6 +1,6 @@
 {
-  "version": "2.1.1",
-  "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.1.1.zip",
-  "sha256": "e2e04ff831df5b7f6ba0f6367bfe300353f79fa6f1a6acf3127bc63015ac30de",
-  "notes": "كابشن تلقائي (مصري/سعودي/فصحى/إنجليزي) + الجلاس بيترسم في مكانه الجديد"
+  "version": "2.2.0",
+  "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.2.0.zip",
+  "sha256": "b699da5bed46c5063cd4766670e05404d8fe157fa32d10ada6d3975edb620ffa",
+  "notes": "كابشن للسيكوينس كله + فيرست كت + 48 مؤثر للنص + جلاس لايف + زووم سلس + أنيميشن أبل"
 }
