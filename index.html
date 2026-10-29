@@ -3,76 +3,320 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ENP — أدوات مونتاج لبريمير</title>
-<meta name="description" content="ENP: كاروسيل 3D، نص متحرك، Liquid Glass، كابشن تلقائي عربي، قص السكتات، زووم، تراكينج — جوه Adobe Premiere Pro.">
+<title>ENP — أدوات مونتاج جوه بريمير</title>
+<meta name="description" content="ENP: بانل واحدة جوه Adobe Premiere Pro — كاروسيل 3D، نص متحرك، Liquid Glass، نص على خط، كابشن تلقائي عربي، فيرست كت، زووم، تراكينج.">
+<meta property="og:title" content="ENP — أدوات مونتاج جوه بريمير">
+<meta property="og:description" content="كاروسيل 3D، نص متحرك، Liquid Glass، كابشن تلقائي، قص السكتات، تراكينج — كله جوه بريمير.">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAA6NklEQVR42u19eZxcVbXut/bep6q6eszUmchEBiAQAoQ5gc7AGEFQ7Dyv9yoPkcigXq7Pp3hBYxyuyvUqiDggyHV4yE0jgmCIYQgNhDAFMickATKRudNz13DO3uv9cU5VV1VXVVd3V0+hyp8hv0pN5+zv7LPWt771LUIfPpZgiZhbBTGvdqmT+DxXLQmsto+cXKzUpBYdXuiDGBFlIxm4TIB8Bqb9tfE/AI79pf0pgBOfTfM6Tvds4uemeb79C5O+Mel13OHVya/iDM+n/Ka07+eUY0x8Nye/q8Oxc5pzFHs/d/xWzvJeAsFAR8G0UkFo25gjJZZveZOtP5g4IrhtXu3vw4nfvaqqSr1YO9csxVLTVxijvviSZdXVsnr6dKal7Qe2+uKbz7SMOI2AazX4bMeYymJlBQy3n9iwtmFSQdtrYE4HpmQk5gfM6d7b8fmegjkRjPkAc+Lf/KQSQA6EtB2Wgg4TxFts6AktzabrN/zlncSN7FRsoUWo0YMa0KlAXl/15RO04RuirK8BMCsoLTAYYa2hoeEYY4ipfb2IZXfBnLpEPQEzZ7xEPnpgZgaYWYPi544ECSGI4CPpAtzYYMZaReJJQ+bhz278676+AnavAJqXLBFYCpB3q3ntoi/NV+DbDZuLipWvIqwdhI0DZmgGAGLhnS9KB8hOwZwGeD0JM7oGyO6FGVkBmRbM6T433bnoWZjhfjan3RiY028YHPtKZsNgEJH0CQkfSYS000DEL7PBPZ/b8tcXYsAGgN4IRfIKaAboxaolMhYjv3bxLfMsyK8CuMqCQKuJQhvjABAgEpnBWABzrjtzPsGcfmfvFMwZLgQ2zGQkQfmFgmMMmPjpKOuffmHz31bFYuy5tbWaOob+/Q/oZdXVclGNeytZfdEtFwYg7gTRQkUCLU6EwTBMEOR9J+cDzJwFUAMUzIMhAewSmDvZbJjBzGxAEEXCIgcGxLw8hOgPvrh5+asAsAzVMl9hSF4A/dasxdbZax+wnz7n+lEnBMv+zTb69oBUviY7YsDESI2F8wTmApsxsMGcei4MG00ECkqfiBgnKljc04zIz760ZfnB38yaZX1x7Vq7p1iUPaXhbquuFJc+90dnzexbPjnMF/hzQFpXt2hbRLRjCCRBLLocJvQXm5FXMGdOAAcyNYf87cwd1oeIBEAUNlozQwWlNUey+MQVw6buu3nji5uXVVfL6Vu2UG0PQhDqfry8RMSTvtm3fl8K3ClJIGQcmwArfXIxgMFcoOaygLkL65MBzGnPBbNtCWUZGGjDP1i87am7YhtldxPGbgF6VdUSNa92qfP8hYsnD7X8Pw0I9fF6u42ZwUQksoE568EWqLmPDpgTkkeAqFT6KKydvzXbka/+684V7y2pqlJLa2udXgd0DMy1535hUrE/sCqo1IQGO2QDZKXLdvOWABbYjP6m5rK8tyvrm35TMobtUuW3QtrZHTI87yvbn/pgVVWVmtdFUIuu8svzapc6L513y+lFfv8qS9CEejtkU2+DmQcfmDmPYOY8U3N9A2bOEczuXwSR1eREbCXEhIDAqvunXXH6vNpaJ8ZZ532Hju3Mq2ff/Pliaf3aZm1FjWMECcG9DOYCmzG42Iz0YUomMHMKE8LGEkIIkB0x+uZb3/3777qyU1NXwPziebecUuqXWzRrOIY1yGNJBlsCWABzPnnmHHKi3MDM8U9gLSEkgWBrPf22Hcu35hpTU65sxvMXLp5cJq3nBXhc1BjmwQrmApvRbwlgVxJ8w6wtksTMexu1s+DrO1e8lwv7ITuLmal2Ka8674sTyyzfKp8QE9q0wyDqUzAX2IzjCczZQ9DY+wkkHGj2CTXER3TNguGTnrij7qEGYImoRS13JykkvAixrLpa+C3xy6BSE1rsiCNiGgxOt3TZfnDuJyvtZ+YcM6f7hPSf2bMwI0N2kxOYkZXNyKKV6TKbkelTOoYZyCojSEPddPL+zAlgLuvLYBBIhLTt+KWaYEH+sgbVYm7ViyJbZJER0L+ZtVhR7VJnzIGh3xnqC1xZb4dsEkJxgZrLAzXHg47N4LywGdzxGLPkHwAgiFSTE7FLpe/KA1OavzOvttb5zaxZqksxdExotHrOzVcVS+vxiLZJu+EJ9So1h/yBuZAADmw2o4s5ERNIWyS4jfQnb9/2zNOZBE2ioz7DfW7NeTeO9JO43zBbDrNIB2bOMzVXAPNHG8ycOScizUYYwPIZuv+eSfNHorodq1kBPbdqiVhUU6ONUl8vUf7xIePYnZWzc7sN9RabkTnxyK/QqPfBzK7WMm8JYD6puawXdhepuUxgRpYEn4hExDh2kbTGQ6mvL6qp0aiqEllDjmXV1bK6psa8NufWcwOCVkWNthxAEoMGGzVXYDMGB5uRC5gTT58AtCKyHYN5X9qx/I1l1dUipsNPu0MTwNo431dCFTkMSgVzb7IZXGAzPnJsBtKCOdP3MWk2JCGKbHa+D4BRk2GHXoZlchEW6TfnfGm2lHgl7DgagCywGQWhUdeERr0rV/B6F7UlpHRgz/nK9mdXLwPkIkAn7dDV2MwAEIX9bQlREBoVhEY9oubynhMlhigESCJopm8DwGYs4aQdehmqZTVqzNrZt84WUrwc0rZJBHuhbarAZvQNmJFjLM4AYCySwoa56F+3r1i9CNWiBjVauLvzdCaAw9B3KAgwp4twBiibUQBz37AZyB+bkQcwg8EsSYC1uYMAno4aBgCxZIkrPnp59uLxFsk5rSbKMYuBQSE06gNqjgclNcf5U81xJ3fIHLU3XWAzOsUcQCJsbBZEc+458ZLxSwGzBEuEuPrpAxIASRI3lChfuTZGE0Bdv3JzFxrl8zZUUM0dd9Rcms/ldMdEbFgXSVVuhLgBAI2Z9bQUs9Y+4ABgY8w1HuKJu0LdFIRGH2lqjvNPzWU9jsQPYGKKGsPMuAYAL1671hEE8MvnfOHUgFSnhbUDE5eUFqi5gtCoH6m5DBdi4voCJKOsYQlx2o8mX34quYUXQFryDL9QFjMbDEBqjgchNTcgEkAeqGxGlvAlRzAndo1bQlg+4jMAQKyqqlKG+NMm4SX5YDMKQqOPBjXX22xG/DuyrC8zg4359BJUKXGkspKZcWbEaDBB9C+bURAaDTahUW+zGZxyYB3Xh4RtDDRw5hZUsqrcN+x0n6RSx2gGM3GCXqkgNCqwGX3PZqALYHYDaYcNKxKlZ005drpQhBMtIcscNowkMBeERgU2o1eFRjmzGZ0dI4PZIlEmNU5UROZyZgNK2JwLbAaOA3/mQSI06kICmGV92RCDCJcrwxjTcWcu+DMPmgQQA5nNQB+AmWHg7sVMNEZ1vLMUhEYFNqNrbVN9lgB2gg0wWDFwWZu2ezSgp+DPPDj8mXvqaDRQwUwgGdEaYL5M9e0cwIKjUYHN6A41lws2ACL4VE/AXHA0KoA5ez7VNWquy+uTckwdRfwFoVFBaNRFag55pOayhkhpGaWOz6oCm1FgMwYHm5Hb+qoCm1FgM/qwbarXw0hVAHMBzIOFzeg0J2KOhRwFNqPgzzx42IxMYPZCjgKbUWAzBozQqMvryykHIwpsRkFoNFCERl1hM9K9kJNYjoLQqCA0GhhCo9xzojTrowrUXIHNGAxsRq6bjSqwGQUwD0Y2I9P6qILQqCA0Ol7AnBxyFKi5AclmAOTK1Zk/0mxGLmAGp7AcBUejgQdmYwyM7QBEfSI04jwKjfJJzeUCZk42PD/eqDkedNRcBzA7Gr7iIoybeza04yC5Re74Fxplouayra8o+DMPQH9mABACkaYWnP1vn0P5pBNgt7SChBgQ/sz9Tc1lW18xGByN8FFyNAIBQiBc14Azb/s0TvnMQux76U2ogB9suP+oOe6eCUyPXF67COZ4YaUwCH5gUHMkBIw2iNa3YObiT+GCOxfjwBsbcWznXogYoAtsRtb1VQU2YwAkgAQQSdhtIZCUuODbN2PmTdcBAHY+XQsnFIXf7wfD+UgJjbqzvqogNOpHMBNBCIKO2oi0tmDY9Mm48Ns3Y+yFZ4CNQduhY/hg5auwggGw0QOSmutp21Q2oVF31lcVhEZ9y2YQESBcukJHooi0hRGsHIoZN12HmTd9Cr7SYjihCFSRHzufehEtHx6Gv6IURusBKTTqLzYj0+Gr41Vo1O2YmQAiAfbqGYmfSx5vxvF5eG4Vj5JSuoQ/k34cgY2BE4lCR22AgNITRuHEq6pwyj9dibLxowFm6IgN6fchXN+EzY/8HarIDzYm4WIQaM/SKOG3uEdDoPhvTnxeJDA8xEmvTv7tTIi7wjEPWDYjix76o63NIBAgXWBAa5ioA+NoGGPcBeXk744tPHcWZqAdPcwMYSlYxUFUTB6F4TOmYswFMzF2zlkIjhgCADC2AxLCvaAEYePvn0T9zj0IDCmF0QZEBMd24ITCafdcTlMmz5SUghlM6V5HAAkIJSGUBCkBQTJmV9vnQqPuhJHqIwlmcnleMu6O6ESiAACrOIDgmBEIjhyKohFD4S8vhfBZIEEZd3Yiiu/sqV9EUkAFA/CVBhGsHIayiWNQNn40rOKi+EuN7cRmWYONgfRZqNv2PjY89Dis0qB7YRHBidooGz8a4y+e5T4X+0LKFla1W7Ek3VWQsMl7NJqO2LBbQ2itq0fb4WNoOVKHcEMzdNSB8Ckovx9CEtzrnPudzciUE6mBxGbk25+5Q3jm7X7a1nCawxBKoXTiaAw/4ySMOOsUDJ1+IorHVsJfXuLulr3xYIaJOu4NX7jxNLVPaIcTiuDlb92HaEsbrOIisDEgKWCHwjj9f1+L0z57NXr7YbeF0Xq4Dsfe24N9b2zEnjXrcGTzDoRaQrCCQUhLwWjdr2xGpgRffVTYDJICxnEQbQohMHwIJlwxGxOunI0Rs6bDV1ac/PqYfiLtnk9IjlBT9eRp/o080Mb+EOTGwwmVhNju/MrSX+LD1zbAX1EG1toFeSSC8vGjMXnhRW445DjZL7h4YE+ZUztOdzgEISRUkR8VE8eiYuJYnLjgAjiRKA6u34atf30eW596Hm1HG+AvKwaBvGpp/4E5daXVcc9mkAseu6kFVnkJTr3pOkz5X5ehbNLYOJB01E4IIclzSxPpgZLxPk/ps/YsIQERxWN16bPwzq/+B5v+8CT8FaVg7dJ0JAhOKIxJl89G0bAK6KgNYamc7gSd/r7470g+VtbGDUSMu5JCSZxw7uk44dzTcdbnP4nX738Emx7/B4SUEJYFeElrrmxGRplsF9iMTNhUx2vblAsGAdYadlsI4y69AKd/5TMYcvLEeOwKZpCSEDI/4QVnwXicIYkbsbnAIUEQlsLb9/8Zr/3kYVglxR6gvM90NKySYky7dr77e4ncnTHHZe7OI5YXkGxnQbTtXvTDpk7Awnu+iYlzz8XzS+5D27EG+IIB6ERasQ/YjEw5jTpe26ZICuhQBDJg4dzv3IJp/7zQXZhwFKSkuwMzp9nJuhQOd4KM5GMj7/7O2o01pN8HHbXx8rd/hY3//QSs0uLkaIAI0dYQxl18NipnTIPRGiRyADPnH+wkBAgEY2swG0y/dgFGnDQRf7nxTjTs2e/G+9r0K5iBTHroQQ5mSAm7pQ3FYysx78HvYNo/L3RjT9uGsCQS77Dcextdh4cxBqwZ0m9B+n04vP5dPPWZb2DDw3+Fr6zEo904eZoYM076xAL3bmN6c1/O7aZOwg2D7HAEI06ZjOrf/xiloyvhhKNoP7H5ERp1ZwCTON6oOUgJu7kVQ0+bjAX//V2MOOsUaI+Wc084JUrEQOT9kfr/vBAaHn+rDQgEaSlIv4XWQ3V4/T8fxlOf+QYOrN3kJoAmYXdj9pLBKIZMGY+Jl5wPZgYJGS+cdLy7ULrYoePxZDnGrJcLJ2hGyD0WJxzFsKkTcPXP74KQEmy0y7v3AZuRqcKrjiehEaSA3eKCed5vvo3A8AoY2+mQRDF7UahxqbMYBwwQmE08e48zAAkGxJk65BPjT3iJqJAy6d+Obd+FHU+uwvbHn0fzhwdhFRfBKg7GE8BEVomEgBMKY8rHLoa/rATattv10O78hY5dWialbJm2vJwmSYsdOwwMA0J4gOfYh8emvydfBMKScMIRjL/gDFz4lc9i1X/8CoGKMrA2/QLmeOn7eKDmINyYuXTiGFz8izs8MNugFFAl7mXxgonxqnlKgrworKd7tN0aQqSxGY0ffIi6re9j3+q3cXDtVoTrm6CK/PCXl7ghiDEdKVIC2HFQNHwIpn58blKFL35RUQLnRl6M2+PkVrbTlo4Xr3t3AvdC7fgOoVxO+pybqrHlqedxZPtuWAGfx96gV6i5bIIvdbxQc9Aawm/hwrtvR/GYSpioDVIy/W7E5IKZY2VpF8jRplbUbXkP9e/uQtOu/Yg2t8KJRNt3UE6tv6WZoKsNnFAY4fomtNU1IHys0a1ECgEr4HcpOWNgtMnYNkVCINLSiinzz8PQqRPdsnjC3YFIeOfP/f1SSRzasB0v/8evoXw+GMM5hZCx7/eXBOErK8bQyeMx9uzTMOasUyF9FnTU2xDiFxKnTXxZG/iKgzjrs9fimW/8BCjy50VolBGbWXCjjgehEQlCtLkNs/79Cxg+8yTocDQjVxsvVTMDwi0kNOzYje3LVmLvi2+hee9BmEgUhjkeX3fZ0Ui4PLaQAsJnwef3eaVmk0E11/G8kxI45bpL48ebXEjh9svJA9uG//cUdq5YjUCqMo9TO0WoI8VpDIz3d6sogNFnnoLzbvsMJi+4IB7qUEZxn/fbmHHywiqs/sUf0XqkHkKplOPqg+aLZNpucGozyIubR15wOk76l4+5u1lsZ05X2PBiQ1ISTiSK9fc9gm2PLEf4WBNUwA/psyADvi62TaURKiWwFOhCpwkEwQmFMOLUKThh9pluQilFnHuOxfexQqO0LLQersPuF99AceVQCCXjgqqcHY0oIV0wBntfX4+9b2zAnK99HrNvvx7adpLaqVO36FgOUlw5DGPPOg1bnngO/nILRnPf6dW5XVU4qIVGrDWEz4eZt/8LhM9KSMxSBbaeTs64sXKkvgkvLF6Kdff9GcZ24K8og/RZLjOhNVi7YQE7LkthjHbjXWPaY1+T8Lr4v3mvS1LqdaFtyhMiTbt6HlTAD6OdeFEm/l+Kxf4aIGDnilfQtO8QSElXY6ETf2PH3+7+Xt1+LN4xGK3BzPCVBGEFA3jxB7/GO398EtJS3kWZIQkG4iHUuHNP93Z76nMwezz04B0ET5IQbQlh0tVVqJw1vd2/gjk5gYoTwdqNTxua8fzN38O+2rUIDC0HyK0oGub+HQRPgLFtlIwchikfu9jbiUXaSJLBICmhoza2/fV5967EpudtUxwDJ8FfGsRLd/8W9bv3g6SI67ITD5LZgLn9+cpTToTye0lhH4PZ6/ruHTaDe7ttihjG0fCXl+DkG65JjunSUGwxCSXAWP3Ne3Hw9Y3wDy2DcXSCkJ3j9F8sZu0df+b0z5Mg2G1hTJh3PkrHjoSJ2oBXGUz8H8XuNFJi/9rNOLB+K6wiP1hz5s2miz2AbDSEz0LLoTpsfPTvLmWYrgpFBI7RnABKKofDKvZaxoi6zGb0BMxJRjODrW0KQiDaEsIJl5yHiqnjPYG8195EHYsNRmsIpbDpgcfwwfKX4R9SBmPrlIvEXZhoYyuiTa1eZUz0mT8zG7ccfvInL8lBb+H+d0vNCjjhiFcSz68/c0wBuOuVt6GjNqRUaX8ExaSwAHzFRbCCRTDGdOj46RmbkR3MSYbnfc9mcI/9mVkbqIAfUz99RftriVJyQC9u1gbCUmjYsRsbHngMvtLiFNrM5XKNo0FSYso18zDpYxeBjYHd6nZic4y2ytKUmqsJTNpeQ293rpxxEkaffaqXDMoMJXT34mzcewDvv/AafMEi6MRiRr7aphgQykLj/kMIHWtww44Otyav78cLjaSlPEq0d9mMtE2/4FjX9yBrmyIBuyWE0RedgeEzTwI7TrJiLond4Lj+eOODjyNS3wxfeWlydc7bbYzWuHDprZhWfRkAYP+r6/HmTx7GwbVbYBUHIJSVQrvl0dIWBGM7mHp1VQIHLFL5hPhODgDvr3wVrYfqEKgoS7hA8+fPbDgW1ztwInYn6jz3nY5tu3LchBCvN8Gc+jcxaE1g2GDS1VVeNau9zMGpIDJuYtWwYzd2r1zjlpoTq3MemHXEQXDEUIxfcB7Ya80ac+FMXPXI3bhwyS3wlZYg3NjshiApire8gDlqo3jMCEy+Yk47t5shOhGWgnEcbP/7ixCWldl4MQ85ERsDYUlIvy97lOBdZHZrCE7YTjpH3RUadRXMzEnipP5nM3ICM7k+FiUTRmHs3LOTyrJsXP0waw12NEDClYoKwgfPrEakvgmkYrdN7rjwsbBDEEi630OWxIzPfwLXPPZTTLt2PqKtbXAi0bhOozv+zKnnUghCtC2ESfPOQ+mYSjdRJSQ16Ma+wbDL1Ox/cxMOrHsXqijgXaD5dzQiYhhj4C8rgb8k6LIu6ZJCbtdvhxqaYXsxfceCUf7YjEx1ADGQ2IxcrlwIgh0KY9yC87zEzu3PixUgpN8H6fdB+Cyw0QgdqUf9jt3Y8+waSL+vA5jBySXsxJ3RrYABOmqjdNwozL/3Dlx6/10oGz8KoYYmrxtGdJnNSD2XxhioYACnfOqyjpqTDKKSzY+tTEgGu07N5dTjSQRtOxh64nj4SoIwjpNRiciOG4o17D0AO5ImSe0lMKd236tB52ikNaziIkz82MVuz51w2+4BwGkLo/7dXTiy7l0c2/o+mvbsR+uBo7BbQtC2A1nkd2/wUiT7ZhBAJkXc45XiiAgkZbw7+8Qr52DMeTPw5r1/wtZHlsN4v4djtgdddDSCtzuPPec0jDrrFO+YklmXRAGdVApN+w7h/Rde8xyVTK85Grn0oMHYs6a3YzzNFcaEuHlO3c7dgNZpS+xdFRrlAubUO5gaTI5GJAl2cwgjzz8dw2dOc3e3cBQH39yMPc+/hgNrNqB570E4oVA8eYxJQtlwkp1W6k5kbNfgBbEiAbdXwdp3aze2Dgwtx0VLb8Okyy7Eaz9+CIfe2QqrOAhhKReQOfozM9xwiR2NqVfNhVCqQzJICRcXOxpQCu8+vQotB494yaDuNUcj7TgoGlqOaZfPSaoKpnsI6Zbc972zGYiV33soNMpEzaV7U0LX9yByAfU+6+TPXoVoYwu2L/sHdi1/BfXbPoBO0j278ZsM+OAfUorgyOHwV5QiMKwcvrKSuJEKKOHYjIEMBiAD/vSxYmxBlYh3hJ8w+0xcu+y/sO63j2H9Q48jVOd2QzOJeONo1nNJbjJYOrYSky+fk0aEhHZlHdgV1YciePfJFyAtK/nc5Zmtkkqi9VgDzrnxUxg2ZYLbnJuBRnTpPYmmA4dxaMt7UH5/u2a8F6i5bC6vajBZ2mrbQXD0cNRt3IG1dz+Mhvf3QQX8btnXccDGoOSESgw/fRoqZ03HsOmTUTK2EoGh5bl1Ssew7ThpS85x6izmTRe1ofw+nP3lf8aJV16Et37+J+x8qhZMcMMBbbJWEIUQCLWFcfKnLkfJqOFx0KQuJHmjKYRPYM+rb+Pwlp1QwXaLsHzr1UkIREMRlI8bjdlf/pzrDZIpdgZ7RSuJ92vfRNOBwwiUlbh6kV5kMzLdfdRg8mcmKWE3tWLjr2sg/BasYABOOIrgqGGYuHAOxl96Pkaecxr85aUdW6FiJzjRP4OTfSkI5NlxUcaWqqRObim80jkwdMp4XPbzf8e0a+bj9Z/+Hkc27YAqLkqgGTueX6MNVLAI0z91eYeEtP07DYhEHFCbH/sHtONAUSBhDfILZqNdK7SFP/waysaOhLZtCCEz89CezmPD4/+Ix/39AeYc5KMDzdLWbQcSfgtOWwTlU8Zh6qLLMGnhRSgeMyLJXsvjw5KGSJFnAZaWPOAEaWknNgFJiZG3W8fCkIkLzsfY82fipaX3Y2vNSlhFAU+ok3wmSQhEWkMYd8FMjDzjpLh/HXs0ZFyCahjG2FABP+o/2IddL70FX9DtsM63P7NQEnY4Ah21ceWPvoapl89xW9hSwJwEJEdD+n3Y/eo72PXq2/AVB+NFnr4GcwLLMfDBHPPYiDS0omzSWJz8uasx5RML4CsviYcJcd8KzywmcafN2vfKObaAU7pzQW7LnXBjXR21YRUXYfY3b8Kel9ei7UiDa53FpgMzwFrj5GsvgZASTjTqAsfjfmHcnj2hRLzAsfHPf0e4vhH+ck9U1c3Z2UhskfR2f6M12uobUTpqBC7/3u2Yfs0C6IgNki7TkXT34MSxU+7u/PJ9f3BDMJ+vA52bD2oOOfpvq8Hgz0yeLYEM+DDjlkWYfsO1KPJcO3XU66gg0U53MXcAaD7b/5N2Wkpw82Qkx7VM6cvRRDDhKMonjMakS8+PswTwQiPp88Wrbh++uRG7XnoT+9/egrrtu+ArKwWYIaTwxp1lsNOlZHPGdqMbj680BtrRcCI2jOPAX1GKmZ++Chd/9QYMmTjWFXtJESfq0zHqxhgovw+bnngO259fA39JcfxulA+hUTY2I5PEVw3oQfCeV3OkvgkjZp2Cc++6CSPOONk9mZ60UsS7UzgjanvTyyJeXjIMkIAK+KEjUbz2k4fRcuhIvJKXJHEkQiQUxomXzkZw2BAYx3GVdl6DQuOeA9j61+ew/elVqNu5x2VwPHMcJ2KDteMertddnqiliIE5W05EgiB9FgJDyjHsxHEYf95MTFt4MUadNi1pk3DDNdFetUy4VbHWkJZC69F6PP/DX7tNAGkQ0FtsRib+Wg3YAT2eci7a0oaT/mUhzvnmF6CCAehI1FWheX1uacME5narWM4F2u2ZYXtJm3NFtLurelqHXS+8jjfu+SMOvrMNVkmawocnZfWVFmP6py6Lx8LSZ6Fp70G8/bvHse2J59ByuM79TGrv7C4aVoGK8WNQMWEMSseORHB4BfylLg2ZaPlLKVa7icwMCQHlt+AvL0XpyOEoHd2eeziRCIiEJ/TyfPfS2BfElY1CYPldP8PRnbtR5HHivRcz5zaASQ1UMMduuWf93+sxY/Gn4qaKrqTS6+SI3e5jfXuxHUupbtsQuKPTshmutMtUjTGuYaHyoXHXh1jzk4ex8+8vu21MpUVJt19OaCiNtLZh0rzzMfyUE13LMtvG2gcfw9oHa9By8CisYBGEcquTQyaPw6S552L8RWej8pQTXQDmyQgHXgub1toDskxoCuaEJDUhq/aYIumz8MKPH8CGx1agyGvM7esEMN371YAFc0sIZ3/z8zj1xk/ExTpuNcrES7KxzDyVI402tSJc34jwsUaE65sQrm+GTrQjSMoSOc7zWsVFmLzwYndnNNyRCoktqmEYb1GN7WDdg3/B2l89itYj9W5hxQN72gE93u37pGvnQ0iJg+u24cXv/AL73tgIqyTofqZ2MO7CMzHj0wtx4vzz4SstTrJhYEd7xR+CgUlbju70Qe13wQ4FE26vYsYMbEi4x83eca/+5f/Diz95qJ1zHgBgBjIMDepXNgOEaEsrzv6GB2bbbueGPRoLktw2eY8ua9r1IY5ufg9HN+5Aw/v70LL/MMJ1jbBDYehINM4IZOoBJCI4ERulJ1RiwvzzoAK+jD7PbtLmxrr739iINf/5O+xbsw5WURH85aUw2sk4bQrkCquGTZuIaVfNxfo/PImXf/hb2KEQfCVB2G1hjJt9Bs695Z8wseoc9/tidybvFu925Yj4LxPI326dCHYBr0JJHompDYRSEIJQ+9Pf4YW7fxtX4HE/sBmZ2uLUgAKzdLuxZ9xSjVNv+iSMbbuSbQ9IJEQcTEc37cDulWtw4LUNaHhvLyKNLa7WwbOnJa8vUAWL3Dgwm1iICDJiw1dSHLfy6lg+dJMp4bPQduQY3vj5n7D1f1bAidrwl5cBxiSBmTsYoXt+0LbGSdcswKs//W+89rPfIzCkHGwY/rISzP/ulzG9+nIIKWFs270heB4fRKL9gk4n+u9m6pu4uyd9RmwDiTml+iyEGprwzF0/wzuP/h2B0uJ2m4ZeEhp1FcxI55zUX4PgSQpEG5sx/vILcNb/ud4LM1yOkyAhLAUdiWL38jXYXrMSh9dtg93SBkooaVsxJ/4kTwzdadsUeVm78YT/SRelZ7gYo9K2PbYSb9z7R9S/vw/+smJYwSJXkJTDIHjjOCgaXoE9r6zFh69vQNGwCoQbmjFp/nm45Ae3o3zCGLD2dmTh8ukEkSBF5Y6FnV56GMcBs3F1GQA+ePktrFhyLz5cvxVBr0OGe1lo1FUwp5mC1T/jhsmbLVIyfjTOX3qrW6RwXGrKjVNt7Kh5FtseWY66Le+5t0Hldo6AGaUnjELF1PE4+NYm6HA0KbHJqa2fku294pphoyEsC0IpHN36Ptbc/TvseuE1SEshMCTWMW5yHloKz4DxwNrNUMVFCDc046wbr8PcJbdBKOkyOEp6RQxOEDHFhgp1tGfoqcEuJ9Tm3XyPIYjid8JjH+zDq796BO88+rSrpako73ECmM9x0qnvVQNidra3I5z1tesRHDkMOhKN02D7at/Cuvv+jMPvbIPwKddMxbYRGDIEJ1x0FiZcegFGnXsaDr6xCXteeD2uluvKaF/2qopuL1ws72NInw/Rlja889vHsP6hvyDc3AJ/abFbjnZ0N2ejE4TPh0hzK+bc8QWc/5XPwjgOdDTqXqQpyn4Gg5iSj4lNzwCduJZeWCOVFU8ZmBkHNr6L9f/zDDb8ZQWajxyDvzQISwUGDJuRaYSd6m8wgwh2axvGXjQLE6+cHQdz+Fgj1v7XH7DzsWfdGNdvQUejGHbqFEz5xAJMuOwClIypjH/MtkefcUX8wQCQ5CSfQ0MrM6RPofVwHd7963M4/YZPQPos7F71Bl77ycM4tG4brNKgC+aEz+7yuGEPMZHmVsxdcivOXryoPbzIIs00rOM7s5CyVyZ0RZpbUff+Xux9Yz3efXY19r21CeGmFljBAIrKPVqOzYAGc3ulsN9mZ7vPCCkx/fPXgogg/T4cfH0jVt/1CzS+txe+0mJEmltRMXUcZtz4SZx49VyoIn+8oiWkRNOu/Tj09laoYFGycXhXTGCMOxxzzY8exJ6X1rpi9dVvwzjaDS88y6zug9m9eCNNLbj4rptx9uJFcKK268WcbQSco6ECvvjFYLeGEGpociuGRie5+lMqqxJXvVF8OgBrjWhbGOHGZrQcrkPjvkM4snM3ju7YhYY9+xFuaYUQElYwgEB5qWcdpvtFaNRVMMflo/01CJ6kgN3chtGzz8Co82YARNhRsxJrlvzKHUQeDEA7DmYsvg4zb17kWdGyS+V5hRWSArueW+OOGqsohnFMtx2NYgzHrudfAwiwiosgfO3WBT0ZBE9SIlTfiHNv/Sece+s/QUeibtk+QxGHjUuTKaXQ+OEh7Fy5Gvte34Aj295HW32Dm5Rp7bl/cdY1isXGbiOxhnY0dNSBcRxX5ScFlM+C8FkoKi+LTx7oCOSBw2ZkirdVvw6C9070lOsugbAUNv/ur3j9+7+Fr6wYTlsERZVDMec/vowxs89M2JGF51kMCCGhIzY+WLEa0ic7UFrdcTRiIF7IMEYndF50cxA8uxdduKkFU66Yg4vvvBk6mjBnMFER6BWM2Lil9EhzK16//xFsWLYcTR8eAQnXwsCt6CFpsjgnm+zGu26Sn/fCFqWSYmaAYbyiSfvFy33WNtVTMCc+VJ8ngNxezNCRKEonjsGkqy7GjseexWvfewCBilJEm1sx9NQpmH/fHSgdPzpu+C3iza2uxFJaFg68sQ5HN++E9PuTAN0T34wOtgDZdvZs46Q9eaUdjqJiwhhc8sOvttMoacX8HFew1e3Yjae+9D18+PZm+EuLUVRRkjQ7MF7NS4jNKcEzOqkfMjGG99qkOxhT9rKjUb7ZjHTfnb5S2AdgTux2nn7lHBzdsB2r77wP/rJiRJtbUXnOaVhw/78jMLQ8viunypZjC7bziefdRDLgAzTn39EoK5g7n8BLXtw6/7tfRunoEXFqLlNHjPJZaNj1IWo+9w3U7/oQweGuGi+3OYDc5zNNelNolGuYkdTW1i9g9tqP/OUlKB03Eq/cca8XUjgYMn0y5v/imy6YI9EOYE6c7dG87xD2vrQWKhiI7869AWbuLpiVRLipGWfd+EmceMkFae29kp3wXR+Mf9zxXzj2/l7Xjd+20zTD9s7otL4BM/camJONZvI0Jy4ny1TPNqB4bCXeX/4KGnbuhRUMwBiNc79xA4qGVcAJR+NaZ07TZwcAH/zD9XYTlkqqpHXXnzkTmNEdMAvXf2/kzJNw4VdviAusMvlbsKfc2/L4s3hv1esoGlLmgrkfB8EPZDYDGTYb1RdsRkcwuX5pbQfr0LL3MKziIkRb2jD89KkYefZpMFpDWhKcYVY2Cdfo+4NnXva83biL/sy5mcB0F8yuDsKAJGHut26Dr7S4w+4ci4djc1yEUnDCEaz978fdSQLG9Psg+P4WGnUlREnT9d2LbEa6NIEJHHPcJ9eiYOIVc9wCSkzETx3npMTUbgfe3oK6Le/BKimKU4Dx+DrbD8iQvZOXXrmGf+28Qfx5ACLBDlckHrExMfN8r51KoO1YA86//XqMn31mh7g51oQrPLss1xDRwvZnXsaBDe96rUy63wfB91rbFHrOZqRlm9pZjjy2TWW9elNuQx6Y2XZQPHIYJl4x2yvFivY2og5Df9yP2frIcrQcPApfRUncV61zfpTRubdz8ryoJDPHhEmqibus8ltQgUC81y/S3IIx58zABV/5rEuDCeqgbkvsLBdCwA6F8cYD/wMhRO5WEn0wO3ugsBm55kSqLxLAbAdLgmA3hzFx4UUoHTcqe+LkSUydSASBoeU49fqPQ/mtlCnBKeOCKYFtiAl8OrQ/JzMnsela3tXlPc+uHthSkJaCsFweNzh8CFoP1+GtB2pAguDYrgz10v/4N1jBgKvRSFPWjmkz2BgInw/r/vQX7H97CwIVJe1ez4MAzH3GZuSY4Kv+BLO7oAD5FCZfM7eD1zDSlYXZBdaF3/oiBsKj5VAdnvzCt2Acxx0VHIni8v/8OkbOmBZvGeMUXjhxmL3y+XB0+y68eu8fYBUHvKGZhQSwMzYjU06k+hPMJASibSFUzjwJo8+Z4c7lkCL9fMGUsEPHzGQoR/F6QkEnW45AiRNnvR7F9hNr4ju8Cvix+5W1WPGvP0TL4aPwFQcRaW7F/O99Bad84pKkO03yd3qLxwwpFexQGCu+fjfa6hvhKwkm6UUKYO4amFO6vnuBzejsYL0OjinXzvfUdB4IctCvx81kkBugc5HEJ07PSmvLpdkTCgFvP/QXvPLjB8FawwoGEA2HcemP/w9m/svH04dNiYPg2bhjMgRhxf+9G7vXrPOGvutBB+b+YjMysVWqv8CMWOn7hJGYGBvDQL3fidF5gs/tXHfMxlYbSL8FSIG6Hbvxyo8fxI5nXkKgrAS2bUOwwMfuvQsnXzPfc0ASGa8Yo7UrnmfGM1/7MTbUrOgUzAzOwBr07iD4wQbmhNJ3b1FzmakbIoIORTB+wXkoGl4BHRvLNhAeXvcGsSsphZJoO9qA9X94Am//7nGEG1sQqChDqL4BQyaPxxX/dQdOOHdGu+VsGmqQDXstTT6E6puw4ut3Y8tTLyBQUdoBzNkYqr4cBN/fQqNM1Fy2OoLqy5g5ebCjgQz6Mfnjc5ObNLgPgZs0GJLjLvzSsiC9f2rcexDbnnwOmx59xu0jLC2GtCTCjc2Yft3lmPutW1BcOayjFW5MC2TafSwAYO9r67Hyzp/h4Kbtnp+FKVBz3WAzMv0m1edg9lp+om0hjDr7NIw4fZrL1ZLbWZ02RevMaDHu45aBtE4UWXJKbdzTVQspAS/ujTa3Ye+addixvBa7X34LrYfqIAN+qKIAws0tqDx1Ci64/XpM+1gVmDkeMydK7Y3j2ndJr4m3af9hvPnAMqz705OwI9F2p6FCAphjAtg5mNGRtut9MMfj56iDSQsvAinp6TZEmls15wzo9ppehpdQbF5KOpsCRtPegzi8eSd2v/Qm9q1Zj2Pv7YHRGsqz47JDYQybOhEzP/dxnHrd5fCXl8AJR+KWWK4pePu8l9h/63buxqbHVmLTYyvQuPcgfKVB12K3AOYesRmZMKd6LwHMBGbACUcwZMo4TLvuEhARLK+lqi8edksIbXUNaD1ch2M7d6Pu3V04+u4HqNuxG22Hj7k7q98Hq7jI9aPw+zFm1qk45dpLMPVjVUlxvgok/24dtdFysB5NHx7Cvjc2YM+addj31ia01TXACvrdookn4C+AuecJYLrfRI/OXMS9Ss2l/mByJ6YWjx6OUefOANtOu24jy3gFpBnUED9YSumpi9m9auMOdGcDO+T20YXrGtF2rBHR1jbYbWF3Z1USyudzE0DyOGh2h+aUjKnEuPNnQvotRFtC0LYdr/yR56/sRKOwW0NoPVqPlsN1CNU3Idrc6rY2FQUglXSBzNyJeKqv2IzBTc1lwxw9OrOa86bNyDXB8ObfOaFQwgjd7onrMy08c4oyThCE110d876Iz9LjRIls4jERjHYQbW1rr/YRdbjoyPPcIM+izI3HPb9nNhn1zAVtRs8SwHSoUb3NZqS9EJghLAm/r7RLV1/nMs7Oh7HHgcsMozu7QA2EkggMKUsSKqXt4fM8ouMNqfEG0wKYexPMqb9d9TmY45JLwIB7ZxB8d9um0h0TM6A5SXXHyX2+XR7QUxAa9Q6YU8RJ+WczMp6snB2NetY21S1xfie/KV/TpgpsRs/YjEzrq3qLzcjlYHvcnZ3vTpMCmAcdmFNdXlWvsRldBXN/t011B8zdGJ1WEBrlh83ItD7qeAVzOn/m7J+bm+dGT8FcEBr1HpiTu757IDTK7oTJHT63q45GnMMg+Fz8mTtzQEUmS6Q8DIIvCI26LjTqfOBTx29Tvc5m9EEC2HM2g9MoSPM3CL4gNMo/m5GJtlWDnc3orqNRfsBcSAB7U2jUnRqEGgxgLrAZBTYj14KaGlgJ4AAF83HGZgwWoVFuCX7yZqM+etRcZjYjn2AuCI16l83IdOcUPIDYDHSDzejUn7kLbAYPSjaDP5JsRqYwULmyeNMLbEa6q7c3EsAsO36BzThu2YxMlK4y0FEC+QpsRvcSQAxKS1v0qqVt/4CZYYCoANNKPykwsx7IQiPOYwKYT2qu4M+cLSfqCzAzGEYrEgCwUnmjOOIecAWhUYHNGAxsRrpvJ4AUAfsT+6ILbEb/gbnAZvRgswHABvuFBv7hNkEzDWShEedRaJRPaq5vwMwFMGdZX8PuLGxm8w8hDL1vG6dJgCgXM+qC0KggNOpfaq7j3wVADkwTBN4XRVvFhqgxzZIExSY7dC0B5D5iMwrUXH9Sc/nsAeR89Ie2J/gsCGTYNNfN27BBbK46TCB+xyIJcOKg3UFCzXE+2Yy+mTaVzx5A7is2g/ubzciEOWMkCTDTO4drqkgsra11pBGPEgCmzAebT6FRX1BzBTZj8AuNMm42SX/EjX8erUWto9yg2lkX1WQDpApCowKYBzI1l2YDFY7RtjbRdTEtB/3vrU9tjrDe5CcFBuv8sBl9AWbOercYqGwG55HN4MHIZuQPzFqRgMPY9GD91s0ASDwwa5byOOknfUIQM/HxIDQqsBnHF5uRbn0ZzIoEEfGTAGgxZimxf+1VGgBLOA+36WijFJCcsjl3h83ggtCowGbkl81IPUcsIGTY2I1GOw8D4NFYq8VSLDVLAHH9lqf3aOZX/KTInU3VH2wGd5nNQB7ZDAxKNgN9xGagn9mMFMN8wCgiYoNXHqjfsmcJIJYCRgDAqagmBohBP3KMAXlFloLQqCA06nuhUc4JPhk2kIwfAaAtMc9MAFiEGg0soRu3PPFKlJ2VRcISjPbZvNzPg+C7zWYUqLkeDYLvaQLIeWQzUt6v/ZDCYV75y/oNrywBqAbQcUADQA2Wuggn9V0nYXD1QGczBrLQKJ+ORh9xNiNlfdk1+jT0XTfCaCej44BeBOhlqJY3bH58dVjbzxUrn9ScQOF9BNqmCoPg+4jN6Albxaz9pGSE9XO/qV+/uhrVcpG3OycBGgBQDQAgSXSXbUxIskhJbY5zNoMHIZvB/e/P3GU2o7tyBXcEBDtsQoLprnTTd5IAvaimRi+pqpI3bv3b62Hj/KrEshSYncEpNOJBR83xIKTmepvNSAwjGewESCkb5lcPHNvwehWqZA1qNFKnASc+lgDi1OpqatwaHi60eEMSjY8Yxx3x1E89gAVtxvGmzegWmI2CEAa8x5bm3KbDpxytQQ0jZRhghxm+S70X3LTpqUMRNrcRYBMJEztTBaFRAcw9ZzO6LFdgAhkCbIf0bQ8d3nQIsZkhKQ+ZLo2p2bKFfzNrlnXLxhe3XTpssq9c+eeGte0QkSwIjQr+zPlsm8rFsliDnSApKwznhw/Wbf7NYsyy/ojnHKQfp57xQauqquSR2kpuODn8VFBaVzY5EUcQqb7uASz4M3/kwazCbD9TX7fp6umooqWo1ZlIJpGNb3qxdq5ZhBqjOXprRNu7i6SlDBJI6oLQqCA0ypPQKB2YDWD8JFWU9W5y5K01gAFqTbZloc6WagmWiKVYau6dcsXkoLKeB2GczZoJJAtCo4KjUW8kgN7zWoAI4L1ttl7wh6bN78X0GtnwKjoD9FIsNUuqqtS/7lzxXlTqKwEICSGNyVJ0GQBCo0Lb1OAGMwGSwMJmfaUL5irVGZgzJoWpj9rdu82qqiq16M3nDl8+bOpeH8mFgkg50CZxEnyBzShQcz31RdFgI0lICdgOm8UPHtv8rAvmWicXrBK68IiFH/dMu+L0AMm/KSEnhLRtCyKrwGYU2qbykADafpKWZr3b1vzxhxo2bcglzOg2oAFgVVWVmldb6/x82qWT/ORf5ZdqQpMTtQXYKvgzF9iMnoA5KJQVNXq3ozDvwUMbPujKzpxzDJ36mFdb6yypqlJf2f7sB43aWRA1zt/KpGUxwCapMaDgz1xgMzpnMxgwBuCgsCyH9d/ahF7QXTB3a4dODT8A4BfTrvy+ILpTQCBiHJsIVkfQFdiMwTYIvg/K2bYiYRkAhvkHD9RtuCsmv+hKmJEXQMd1H6imRajRP596+ScDwrpbCTm5RUeYmQ2QWFkc+P7MhUHwfQNmZtYEEn6hyDHmPYfN1x84tuHxalTL6ajh7oK5x4COPX4za5b1xbVr7bsnLBxVFhD/po2+3RLKFzK2YWYGQRbYjAKbwTCamchPUthsooLonlaK/uz3R7YcXIxZ1gNYa/cUi3kBNAAsQ7Vc5En57p182YWWVHcCWCiJ0GYcN8QGCXCqE3UBzAN1EHyeEkBmsGFA+CFJuzv0csfQD35bv+5VAKhGdQcZaL8D2jsW+k5VlVxa6wbz95502TzJ4qsEcZUkQlhrGDYOEQsGiYLQ6PhlMxgwABsBUooIxi2oPe2Af/pA3fpVbshapbLpMvod0IkJI+BWGQHg59OunE+M25nNRQFpVUSNRpQ1mFm7vjZxcFNBaDQowczMAMEY9pqeFAkoEogYu4FALxvme35dt+GFWO6VKFXO56NXAJ0YhmzGdI4B+94pV5xAoBsY5homzPIJCTAjagw0MwyMoaQ0JlkvUmAz8pMAokcmMJxgF0cw7q1WCAKkxwLbbMDgtRL8JBl++L5jG/fFgLwloUO7Nx69CmjEWxWr5fQEYAPAT6YsONMS6jQYvlYzzjbgSr+QgcSTGDG6i7trQWjUF9OmVKx5CQAxEDVOmIgOE+gtZnrCkN7066Mb3klkw3obyH0K6MQDm1tVJebVJhPmD0+4PtDg23+ygpwU1vZCJcQIx7Bk5suI4DOFBHDgjE5jRIl4pYDQtjFHglIuj7D+YESwYtvS3bXh5PWuUkCt6Y3QItPj/wOahaty15XeIQAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;800;900&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#120d10; --panel:#1d1519; --line:#3d2a33; --ink:#f6edf1; --mut:#b79da9; --acc:#8f1f3f; --acc2:#e48aa6; --gold:#c9a26b; }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: radial-gradient(100% 60% at 100% 0%, rgba(143,31,63,.35), transparent 60%), radial-gradient(80% 50% at 0% 100%, rgba(143,31,63,.18), transparent 60%), var(--bg);
-    color: var(--ink); font: 16px/1.7 "Segoe UI", Tahoma, "Cairo", Arial, sans-serif; min-height: 100vh; }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
-  header { display: flex; align-items: center; gap: 12px; padding: 22px 0; }
-  .logo { width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center; background: linear-gradient(145deg,#b2365e,#5e1029); box-shadow: 0 8px 24px rgba(143,31,63,.5); }
-  .logo svg { width: 26px; height: 26px; }
-  .brand { font-weight: 800; font-size: 22px; letter-spacing: 3px; direction: ltr; }
-  .hero { padding: 50px 0 30px; text-align: center; }
-  h1 { font-size: clamp(30px, 6vw, 52px); line-height: 1.25; margin: 0 0 14px; }
-  h1 span { background: linear-gradient(90deg,#f1a9bf,#c9a26b); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .sub { color: var(--mut); font-size: 18px; max-width: 640px; margin: 0 auto 28px; }
-  .dl { display: inline-flex; align-items: center; gap: 10px; padding: 16px 34px; border-radius: 14px; color: #fff; text-decoration: none; font-weight: 800; font-size: 19px;
-    background: linear-gradient(135deg,#6e1630,#b2365e); box-shadow: 0 12px 30px rgba(143,31,63,.5); transition: transform .15s; }
-  .dl:hover { transform: translateY(-2px); }
-  .meta { color: var(--mut); font-size: 13px; margin-top: 12px; }
-  .free { display: inline-block; margin-top: 18px; padding: 6px 14px; border-radius: 20px; font-size: 14px; background: rgba(201,162,107,.12); border: 1px solid rgba(201,162,107,.45); color: #e9cfa5; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 40px 0; }
-  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
-  .card b { display: block; font-size: 17px; margin-bottom: 4px; } .card p { margin: 0; color: var(--mut); font-size: 14.5px; }
-  .card i { font-style: normal; display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: rgba(143,31,63,.35); margin-bottom: 10px; }
-  h2 { font-size: 24px; margin: 40px 0 14px; }
-  ol { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 18px 40px 18px 18px; margin: 0; }
-  ol li { margin: 6px 0; } code { background: #281c22; padding: 1px 7px; border-radius: 6px; direction: ltr; display: inline-block; }
-  .faq div { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin-bottom: 10px; }
-  .faq b { display: block; } .faq p { margin: 4px 0 0; color: var(--mut); font-size: 15px; }
-  footer { color: var(--mut); text-align: center; padding: 40px 0 30px; font-size: 13px; }
+:root { --bg:#100a0d; --bg2:#170e13; --panel:#1d1419; --panel2:#251a20; --line:#3a2730; --ink:#f7eef2; --mut:#b9a0ac; --acc:#8f1f3f; --acc2:#e48aa6; --rose:#ff4d7d; --gold:#f2c26b; --r:18px; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.75 "Alexandria", "Segoe UI", Tahoma, sans-serif; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.lat { font-family: "Poppins", "Alexandria", sans-serif; direction: ltr; unicode-bidi: isolate; }
+/* background glow */
+.glow { position: fixed; inset: -20% -10% auto; height: 900px; pointer-events: none; z-index: 0;
+  background: radial-gradient(600px 420px at 85% 10%, rgba(178,40,88,.35), transparent 70%), radial-gradient(520px 380px at 10% 30%, rgba(242,194,107,.10), transparent 70%); }
+header, main, footer { position: relative; z-index: 1; }
+/* nav */
+nav.top { display: flex; align-items: center; gap: 14px; padding: 18px 0; }
+.logo { width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; background: linear-gradient(135deg,#d0406e,#5e1029); box-shadow: 0 8px 30px rgba(255,77,125,.35); font: 900 22px "Poppins"; color: #fff; }
+.brand { font: 800 22px "Poppins"; letter-spacing: .5px; }
+nav.top .sp { flex: 1; }
+nav.top a.l { color: var(--mut); font-size: 14px; padding: 6px 10px; border-radius: 10px; }
+nav.top a.l:hover { color: var(--ink); background: rgba(255,255,255,.05); }
+@media (max-width: 760px) { nav.top a.l { display: none; } }
+/* hero */
+.hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; padding: 40px 0 70px; }
+@media (max-width: 900px) { .hero { grid-template-columns: 1fr; padding-top: 10px; } }
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 30px; border: 1px solid var(--line); background: rgba(255,255,255,.03); color: var(--acc2); font-size: 13px; }
+.pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--rose); box-shadow: 0 0 10px var(--rose); animation: blink 1.6s infinite; }
+@keyframes blink { 50% { opacity: .3; } }
+h1 { font-size: clamp(34px, 5.4vw, 60px); line-height: 1.25; margin: 18px 0 14px; font-weight: 900; }
+h1 em { font-style: normal; background: linear-gradient(90deg, var(--rose), var(--gold)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { color: var(--mut); font-size: 18px; max-width: 560px; }
+.dl { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 12px; }
+.btn { display: inline-flex; align-items: center; gap: 12px; padding: 14px 22px; border-radius: 14px; font-weight: 800; font-size: 16px; transition: transform .15s, box-shadow .15s; border: 1px solid transparent; }
+.btn svg { width: 22px; height: 22px; flex: none; }
+.btn small { display: block; font-weight: 400; font-size: 12px; opacity: .8; }
+.btn.pri { background: linear-gradient(135deg, #c23a66, #7d1734); box-shadow: 0 10px 30px rgba(194,58,102,.35); }
+.btn.sec { background: var(--panel); border-color: var(--line); }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(194,58,102,.45); }
+.meta { color: var(--mut); font-size: 13px; display: flex; gap: 16px; flex-wrap: wrap; }
+.meta b { color: var(--ink); font-weight: 600; }
+/* hero mockup: a little Premiere panel */
+.mock { position: relative; border-radius: 22px; background: linear-gradient(160deg, #1f151a, #120b0f); border: 1px solid var(--line); box-shadow: 0 40px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.02) inset; overflow: hidden; }
+.mock .bar { display: flex; align-items: center; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.mock .bar i { width: 10px; height: 10px; border-radius: 50%; background: #3a2a31; }
+.mock .bar span { margin-inline-start: auto; font: 600 12px "Poppins"; color: var(--mut); }
+.mock .tabs { display: flex; gap: 6px; padding: 10px 12px; flex-wrap: wrap; }
+.mock .tabs b { font-size: 11px; padding: 4px 9px; border-radius: 8px; background: var(--panel2); color: var(--mut); font-weight: 600; }
+.mock .tabs b.on { background: var(--acc); color: #fff; }
+.mock .screen { margin: 4px 12px 12px; height: 300px; border-radius: 14px; position: relative; overflow: hidden; background: radial-gradient(circle at 30% 30%, #5b3a4c, #1b1016 70%); }
+/* 3D carousel inside the mockup */
+.car { position: absolute; inset: 0; perspective: 900px; display: grid; place-items: center; }
+.ring { position: relative; width: 110px; height: 160px; transform-style: preserve-3d; animation: spin 12s linear infinite; }
+.ring div { position: absolute; inset: 0; border-radius: 14px; border: 1px solid rgba(255,255,255,.35); box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+@keyframes spin { to { transform: rotateY(-360deg); } }
+.mock .cap { position: absolute; bottom: 18px; inset-inline: 0; text-align: center; font-weight: 800; font-size: 20px; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+.mock .cap span { background: var(--gold); color: #2a0712; border-radius: 8px; padding: 0 8px; }
+.glasspill { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); padding: 7px 18px; border-radius: 40px; background: rgba(255,255,255,.12); backdrop-filter: blur(10px) saturate(1.6); -webkit-backdrop-filter: blur(10px) saturate(1.6); border: 1px solid rgba(255,255,255,.35); font-size: 13px; font-weight: 600; animation: island 4s ease-in-out infinite; white-space: nowrap; }
+@keyframes island { 0%, 100% { padding: 7px 18px; } 50% { padding: 7px 34px; } }
+/* sections */
+section { padding: 70px 0; }
+.sh { text-align: center; max-width: 720px; margin: 0 auto 40px; }
+.sh h2 { font-size: clamp(26px, 3.6vw, 40px); margin: 8px 0; font-weight: 900; }
+.sh p { color: var(--mut); margin: 0; }
+.kicker { color: var(--gold); font-weight: 600; font-size: 14px; letter-spacing: .5px; }
+/* features */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 960px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .grid { grid-template-columns: 1fr; } }
+.card { background: linear-gradient(180deg, var(--panel), var(--bg2)); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; display: flex; flex-direction: column; transition: transform .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); border-color: rgba(228,138,166,.5); }
+.art { height: 170px; position: relative; overflow: hidden; background: radial-gradient(circle at 70% 20%, rgba(194,58,102,.35), transparent 60%), #160d12; }
+.card .tx { padding: 18px 18px 20px; }
+.card h3 { margin: 0 0 6px; font-size: 19px; font-weight: 800; }
+.card p { margin: 0; color: var(--mut); font-size: 14.5px; }
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 8px; background: rgba(242,194,107,.14); color: var(--gold); margin-bottom: 8px; font-weight: 600; }
+/* card art animations */
+.a-text { display: grid; place-items: center; font: 900 34px "Poppins"; letter-spacing: 2px; }
+.a-text span { display: inline-block; animation: apple 3s infinite; filter: blur(0); }
+.a-text span:nth-child(2) { animation-delay: .12s } .a-text span:nth-child(3) { animation-delay: .24s } .a-text span:nth-child(4) { animation-delay: .36s }
+@keyframes apple { 0% { opacity: 0; filter: blur(10px); transform: translateY(14px) } 25%, 80% { opacity: 1; filter: blur(0); transform: none } 100% { opacity: 0; filter: blur(8px) } }
+.a-glass .orb { position: absolute; border: 1px solid rgba(255,255,255,.4); backdrop-filter: blur(8px) saturate(1.7); -webkit-backdrop-filter: blur(8px) saturate(1.7); background: rgba(255,255,255,.08); box-shadow: inset 0 2px 8px rgba(255,255,255,.35), inset 0 -10px 20px rgba(0,0,0,.25), 0 14px 30px rgba(0,0,0,.35); }
+.a-glass .stripe { position: absolute; inset: -40%; background: repeating-linear-gradient(60deg, #ff4d7d 0 22px, #f2c26b 22px 44px, #6b7cff 44px 66px, #4dd2ff 66px 88px); opacity: .55; animation: slide 6s linear infinite; }
+@keyframes slide { to { transform: translateX(88px); } }
+.a-path svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.a-path text { font: 800 22px "Alexandria"; fill: #fff; filter: drop-shadow(0 0 6px rgba(255,255,255,.7)); }
+.a-path .ln { stroke: rgba(255,211,77,.8); stroke-dasharray: 6 5; fill: none; }
+.a-cap { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 22px; }
+.a-cap .w { font-weight: 800; font-size: 22px; display: flex; gap: 6px; }
+.a-cap .w b { padding: 0 6px; border-radius: 6px; animation: hi 2.4s steps(1) infinite; }
+.a-cap .w b:nth-child(2) { animation-delay: .8s } .a-cap .w b:nth-child(3) { animation-delay: 1.6s }
+@keyframes hi { 0% { background: var(--gold); color: #2a0712 } 33.3% { background: transparent; color: #fff } }
+.a-cap .wave { display: flex; gap: 3px; height: 30px; align-items: center; margin-bottom: 14px; }
+.a-cap .wave i { width: 4px; border-radius: 2px; background: var(--acc2); animation: eq 1s ease-in-out infinite; }
+@keyframes eq { 50% { transform: scaleY(.3) } }
+.a-cut { padding: 34px 20px; }
+.a-cut .row { display: flex; height: 34px; gap: 0; margin-bottom: 10px; }
+.a-cut .row b { border-radius: 6px; margin-inline-end: 3px; }
+.a-cut .row .v { background: #8b4fd1; } .a-cut .row .au { background: #2f9b75; }
+.a-cut .row .gap { background: rgba(255,77,125,.55); animation: gone 3s ease-in-out infinite; }
+@keyframes gone { 0%, 30% { flex-basis: 34px; opacity: 1 } 60%, 100% { flex-basis: 0; opacity: 0; margin: 0 } }
+.a-zoom .fr { position: absolute; inset: 18px 30px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,.25); }
+.a-zoom .fr div { position: absolute; inset: 0; background: radial-gradient(circle at 50% 45%, #1b0e14 0 18%, transparent 19%), radial-gradient(ellipse at 50% 95%, #1b0e14 0 34%, transparent 35%), linear-gradient(135deg, #6b3a50, #2c1620); animation: zoom 4s ease-in-out infinite; }
+@keyframes zoom { 0%, 15% { transform: scale(1) } 40%, 60% { transform: scale(1.28) translateY(4%) } 85%, 100% { transform: scale(1) } }
+.a-track .tgt { position: absolute; width: 54px; height: 54px; border: 2px solid var(--gold); border-radius: 6px; animation: path 5s ease-in-out infinite; }
+.a-track .lbl { position: absolute; font-weight: 800; font-size: 13px; color: #fff; background: var(--acc); padding: 2px 8px; border-radius: 6px; animation: path2 5s ease-in-out infinite; }
+@keyframes path { 0% { left: 15%; top: 50% } 50% { left: 62%; top: 22% } 100% { left: 15%; top: 50% } }
+@keyframes path2 { 0% { left: calc(15% + 0px); top: calc(50% - 26px) } 50% { left: 62%; top: calc(22% - 26px) } 100% { left: 15%; top: calc(50% - 26px) } }
+.a-fx { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; padding: 18px; }
+.a-fx b { border-radius: 9px; background: var(--panel2); border: 1px solid var(--line); display: grid; place-items: center; font: 800 12px "Poppins"; height: 56px; }
+.a-fx b span { animation: pop 2.4s infinite; display: inline-block; }
+.a-fx b:nth-child(2) span { animation-name: rise } .a-fx b:nth-child(3) span { animation-name: flip } .a-fx b:nth-child(4) span { animation-name: blurin }
+.a-fx b:nth-child(5) span { animation-name: rise; animation-delay: .4s } .a-fx b:nth-child(6) span { animation-delay: .6s } .a-fx b:nth-child(7) span { animation-name: blurin; animation-delay: .3s } .a-fx b:nth-child(8) span { animation-name: flip; animation-delay: .5s }
+@keyframes pop { 0% { transform: scale(0) } 20% { transform: scale(1.2) } 30%, 100% { transform: scale(1) } }
+@keyframes rise { 0% { transform: translateY(20px); opacity: 0 } 30%, 100% { transform: none; opacity: 1 } }
+@keyframes flip { 0% { transform: scaleX(0) } 30%, 100% { transform: scaleX(1) } }
+@keyframes blurin { 0% { filter: blur(8px); opacity: 0 } 35%, 100% { filter: blur(0); opacity: 1 } }
+.a-kf svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.a-kf .dot { animation: ride 2.6s ease-in-out infinite alternate; }
+@keyframes ride { from { transform: translate(0, 0) } to { transform: translate(0, 0) } }
+.a-sfx { display: flex; align-items: center; justify-content: center; gap: 4px; }
+.a-sfx i { width: 6px; border-radius: 3px; background: linear-gradient(var(--gold), var(--rose)); animation: eq 1.1s ease-in-out infinite; }
+
+.a-safe { display: grid; place-items: center; }
+.a-safe .ph { position: relative; width: 84px; height: 150px; border-radius: 14px; border: 2px solid #3a2a31; background: linear-gradient(160deg, #5b3a4c, #1b1016); overflow: hidden; }
+.a-safe .z { position: absolute; background: rgba(255,45,85,.35); } .a-safe .t { top: 0; left: 0; right: 0; height: 12%; } .a-safe .b { bottom: 0; left: 0; right: 0; height: 24%; } .a-safe .r { top: 12%; bottom: 24%; right: 0; width: 16%; }
+.a-safe .ok { position: absolute; top: 12%; bottom: 24%; left: 6%; right: 16%; border: 2px dashed #4fd18b; animation: blink 2s infinite; }
+.a-safe .ic { position: absolute; right: 3%; width: 9px; height: 9px; border-radius: 50%; background: #fff; }
+/* how it works */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: s; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+.step { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 22px; position: relative; }
+.step::before { counter-increment: s; content: counter(s); position: absolute; top: -14px; inset-inline-start: 18px; width: 30px; height: 30px; border-radius: 10px; background: linear-gradient(135deg, var(--rose), var(--acc)); display: grid; place-items: center; font: 800 15px "Poppins"; }
+.step h4 { margin: 6px 0 6px; font-size: 17px; }
+.step p { margin: 0; color: var(--mut); font-size: 14.5px; }
+.step code { background: var(--panel2); padding: 1px 6px; border-radius: 6px; font-family: "Poppins"; font-size: 13px; direction: ltr; unicode-bidi: isolate; }
+.os { display: flex; justify-content: center; gap: 8px; margin-bottom: 26px; }
+.os button { font: 600 14px "Alexandria"; color: var(--mut); background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 8px 18px; cursor: pointer; }
+.os button.on { color: #fff; background: var(--acc); border-color: var(--acc); }
+.hide { display: none !important; }
+/* guide */
+.guide { display: grid; gap: 12px; max-width: 860px; margin: 0 auto; }
+details { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 4px 18px; }
+details[open] { border-color: rgba(228,138,166,.45); }
+summary { cursor: pointer; padding: 14px 0; font-weight: 800; list-style: none; display: flex; align-items: center; gap: 10px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; margin-inline-start: auto; color: var(--acc2); font: 800 20px "Poppins"; transition: transform .2s; }
+details[open] summary::after { transform: rotate(45deg); }
+summary .ico { width: 30px; height: 30px; border-radius: 9px; background: var(--panel2); display: grid; place-items: center; }
+details ol { margin: 0 0 16px; padding-inline-start: 20px; color: var(--mut); }
+details ol li { margin: 4px 0; }
+details ol b { color: var(--ink); }
+/* trust strip */
+.trust { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+@media (max-width: 760px) { .trust { grid-template-columns: repeat(2, 1fr); } }
+.trust div { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 18px; text-align: center; }
+.trust b { display: block; font-size: 22px; font-weight: 900; color: var(--gold); }
+.trust span { color: var(--mut); font-size: 13.5px; }
+.cta { text-align: center; background: radial-gradient(500px 220px at 50% 0%, rgba(194,58,102,.35), transparent 70%), var(--panel); border: 1px solid var(--line); border-radius: 26px; padding: 50px 20px; }
+.cta h2 { margin: 0 0 10px; font-size: clamp(26px, 3.4vw, 38px); font-weight: 900; }
+.cta .dl { justify-content: center; }
+footer { padding: 30px 0 50px; color: var(--mut); font-size: 13px; text-align: center; }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s, transform .6s; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header><div class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 5H8v14h9"/><path d="M8 12h7"/></svg></div><div class="brand">ENP</div></header>
-  <section class="hero">
-    <h1>أدوات مونتاج <span>جوه بريمير</span><br>بتوفّر عليك ساعات</h1>
-    <p class="sub">كاروسيل 3D، نص متحرك بالعربي، Liquid Glass، كابشن تلقائي بالمصري والسعودي، وقص السكتات — كله في بانل واحد، وكله بيشتغل على جهازك.</p>
-    <a class="dl" href="releases/ENP-Setup.zip" download>
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
-      نزّل ENP للويندوز</a>
-    <div class="meta">Adobe Premiere Pro 2019 – 2026 · ويندوز · حوالي 1 ميجا</div>
+<div class="glow"></div>
+<header class="wrap">
+  <nav class="top">
+    <div class="logo"><img src="data:image/png;base64,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" alt="ENP" style="width:30px;height:auto"></div><div class="brand">ENP</div>
+    <span class="sp"></span>
+    <a class="l" href="#features">الأدوات</a><a class="l" href="#install">التسطيب</a><a class="l" href="#guide">إزاي تستخدمها</a><a class="l" href="#faq">أسئلة</a>
+    <a class="btn pri" href="#download" style="padding:8px 16px;font-size:14px">تحميل</a>
+  </nav>
+  <div class="hero">
+    <div>
+      <span class="pill"><i></i> بانل واحدة جوه Premiere Pro</span>
+      <h1>كل اللي كنت بتعمله على الأفتر… <em>بقى بدوسة جوه البريمير</em></h1>
+      <p class="lead">كاروسيل 3D، نص متحرك ستايل أبل، Liquid Glass بأشكال 3D، نص بيمشي على أي خط ترسمه، كابشن عربي تلقائي، فيرست كت، زووم وتراكينج — من غير ما تفتح After Effects.</p>
+      <div class="dl" id="download">
+        <a class="btn pri" href="releases/ENP-Setup.zip" data-os="win"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10 4.5v7H3zM11 4.3 21 3v8.5H11zM3 12.5h7v7L3 18.5zM11 12.5h10V21l-10-1.4z"/></svg><span>تحميل لويندوز<small class="ver">Windows 10 / 11</small></span></a>
+        <a class="btn sec" href="releases/ENP-Setup-Mac.zip" data-os="mac"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.9-.9-3.1-.8-1.6 0-3.1.9-3.9 2.4-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 3 2.4 1.2 0 1.6-.8 3.1-.8s1.8.8 3.1.8c1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7 0 0-2.6-1-2.7-4.2zM14 5.6c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.6 2.8-1.4z"/></svg><span>تحميل لماك<small>Intel و Apple Silicon</small></span></a>
+      </div>
+      <div class="meta"><span>الإصدار <b class="lat" id="ver">—</b></span><span>Premiere Pro <b class="lat">2019 – 2026</b></span><span>بيتحدّث <b>لوحده</b></span></div>
+    </div>
+    <div class="mock reveal">
+      <div class="bar"><i></i><i></i><i></i><span style="display:flex;align-items:center;gap:6px"><img src="data:image/png;base64,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" alt="" style="width:18px">ENP</span></div>
+      <div class="tabs"><b class="on">كاروسيل</b><b>نص</b><b>جلاس</b><b>مؤثرات</b><b>نص على خط</b><b>قص</b><b>كابشن</b><b>زووم</b><b>تراكينج</b><b>المنطقة الآمنة</b></div>
+      <div class="screen">
+        <div class="car"><div class="ring" id="ring"></div></div>
+        <div class="glasspill">● تسجيل…</div>
+        <div class="cap">الكابشن <span>بيتعمل</span> لوحده</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap" style="padding-top:10px">
+    <div class="trust reveal">
+      <div><b>+12</b><span>أداة في بانل واحدة</span></div>
+      <div><b>+60</b><span>حركة نص جاهزة</span></div>
+      <div><b>+48</b><span>مؤثر لأي كلام على التايملاين</span></div>
+      <div><b>100%</b><span>على جهازك — ملفاتك مابتترفعش</span></div>
+    </div>
   </section>
 
-  <div class="grid">
-    <div class="card"><i>🎠</i><b>كاروسيل 3D</b><p>16 شكل لصورك وفيديوهاتك، بتحكم كامل في الكاميرا والحركة، وينزل بخلفية شفافة.</p></div>
-    <div class="card"><i>✍️</i><b>نص متحرك</b><p>52 حركة للنص، عربي متصل الحروف وإنجليزي، بأي خط على جهازك.</p></div>
-    <div class="card"><i>💬</i><b>كابشن تلقائي</b><p>مصري، سعودي، فصحى أو إنجليزي — بتوقيت كل كلمة وستايلات متحركة. من غير نت.</p></div>
-    <div class="card"><i>🫧</i><b>Liquid Glass</b><p>زجاج زي أبل بيكسر ويغبّش الفيديو اللي تحته فعلًا.</p></div>
-    <div class="card"><i>✂️</i><b>قص السكتات</b><p>بيشيل الفراغات من الكلام لوحده ويحافظ على المزامنة.</p></div>
-    <div class="card"><i>🎯</i><b>زووم وتراكينج</b><p>زووم مع كل جملة، وتراكينج يخلي النص يمشي ورا أي حاجة.</p></div>
-    <div class="card"><i>📈</i><b>منحنيات الكيفريمز</b><p>Ease و Bounce و Elastic لأي كيفريمز عندك.</p></div>
-    <div class="card"><i>🔊</i><b>مكتبة ساوند</b><p>فولدراتك في مكتبة فيها بحث ومعاينة، وتحطها بدوسة.</p></div>
-  </div>
+  <section class="wrap" id="features">
+    <div class="sh reveal"><div class="kicker">الأدوات</div><h2>كل حاجة بتاخد وقتك… بقت دوسة</h2><p>كل أداة بتنزل على التايملاين على طول — مش محتاج تصدّر وتستورد.</p></div>
+    <div class="grid">
+      <div class="card reveal"><div class="art" id="art-car"></div><div class="tx"><span class="tag">كاروسيل</span><h3>كاروسيل 3D</h3><p>صورك أو فيديوهاتك بتلف في دايرة 3D بأشكال كتير، من غير ولا كيفريم. اختار الشكل ودوس رندر.</p></div></div>
+      <div class="card reveal"><div class="art a-text"><div dir="ltr"><span>T</span><span>E</span><span>X</span><span>T</span></div></div><div class="tx"><span class="tag">نص متحرك</span><h3>+60 حركة نص</h3><p>عربي وإنجليزي بأي خط على جهازك — كلمة كلمة، حرف حرف، ستايل أبل بالبلور، جليتش، نيون، وأكتر.</p></div></div>
+      <div class="card reveal"><div class="art a-glass"><div class="stripe"></div>
+        <div class="orb" style="width:84px;height:84px;border-radius:50%;left:24px;top:40px"></div>
+        <div class="orb" style="width:130px;height:44px;border-radius:30px;left:120px;top:30px"></div>
+        <div class="orb" style="width:120px;height:70px;border-radius:22px;left:140px;top:88px"></div></div>
+        <div class="tx"><span class="tag">Liquid Glass</span><h3>زجاج سايل + أشكال 3D</h3><p>زي أبل بالظبط: بيكسر ويغبّش الفيديو اللي تحته. نجوم، قمر، قلب، فقاعات كلام وأشكال كتير بسُمك 3D، وبتطلع من المكان اللي تحدده.</p></div></div>
+      <div class="card reveal"><div class="art a-path"><svg viewBox="0 0 340 170"><path id="arc" class="ln" d="M40 140 Q170 -10 300 140"/><text><textPath href="#arc" startOffset="50%" text-anchor="middle">أستايل جامد على الخط</textPath></text></svg></div>
+        <div class="tx"><span class="tag">جديد</span><h3>نص على خط</h3><p>ارسم أي خط أو منحنى بالقلم والكلام يمشي عليه — يبدأ كبير ويصغر، أو يطلع حرف حرف على الخط.</p></div></div>
+      <div class="card reveal"><div class="art a-cap"><div class="wave" id="wave"></div><div class="w"><b>الكابشن</b><b>بيتعمل</b><b>لوحده</b></div></div>
+        <div class="tx"><span class="tag">كابشن</span><h3>كابشن تلقائي</h3><p>مصري، سعودي، فصحى وإنجليزي — بتوقيت كل كلمة، على جهازك من غير نت. تقسم الجملة بـ Enter وتحفظ ملف SRT.</p></div></div>
+      <div class="card reveal"><div class="art a-cut"><div class="row"><b class="v" style="flex:1"></b><b class="gap"></b><b class="v" style="flex:1.4"></b><b class="gap"></b><b class="v" style="flex:.8"></b></div><div class="row"><b class="au" style="flex:1"></b><b class="gap"></b><b class="au" style="flex:1.4"></b><b class="gap"></b><b class="au" style="flex:.8"></b></div></div>
+        <div class="tx"><span class="tag">فيرست كت</span><h3>قص السكتات</h3><p>بيسمع الكلام ويعمل سيكوينس جديد من غير السكتات، وكل التراكات متزامنة. الأصلي مابيتلمسش.</p></div></div>
+      <div class="card reveal"><div class="art a-fx"><b><span>Pop</span></b><b><span>Rise</span></b><b><span>Flip</span></b><b><span>Blur</span></b><b><span>Apple</span></b><b><span>Stamp</span></b><b><span>Focus</span></b><b><span>Card</span></b></div>
+        <div class="tx"><span class="tag">مؤثرات</span><h3>+48 مؤثر لأي كلام</h3><p>حدد الكلام اللي كاتبه على التايملاين ودوس على المؤثر — بيتحط على الكل ويتظبط على طول كل واحد.</p></div></div>
+      <div class="card reveal"><div class="art a-zoom"><div class="fr"><div></div></div></div>
+        <div class="tx"><span class="tag">زووم</span><h3>زووم سلس على الكلام</h3><p>بيتحرك مع الجمل لوحده، من غير ما تحدد مستوى صوت. ناعم جدًا، سلس، حيوي، أو بانش.</p></div></div>
+      <div class="card reveal"><div class="art a-track"><div class="tgt"></div><div class="lbl">نص على الحيطة</div></div>
+        <div class="tx"><span class="tag">تراكينج</span><h3>تراكينج نقطة وسطح</h3><p>تابع أي حاجة أو أي سطح (حيطة، شاشة، يافطة) وحط عليه نص أو صورة بياخد منظوره ويمشي معاه.</p></div></div>
+      <div class="card reveal"><div class="art a-kf"><svg viewBox="0 0 340 170"><path d="M30 140 C150 140 190 30 310 30" stroke="#f2c26b" stroke-width="4" fill="none"/><line x1="30" y1="140" x2="140" y2="140" stroke="#e48aa6" stroke-width="2"/><line x1="310" y1="30" x2="200" y2="30" stroke="#e48aa6" stroke-width="2"/><circle cx="140" cy="140" r="7" fill="#ff4d7d"/><circle cx="200" cy="30" r="7" fill="#ff4d7d"/><rect x="22" y="132" width="16" height="16" fill="#f2c26b" transform="rotate(45 30 140)"/><rect x="302" y="22" width="16" height="16" fill="#f2c26b" transform="rotate(45 310 30)"/></svg></div>
+        <div class="tx"><span class="tag">كيفريمز</span><h3>منحنيات الكيفريمز</h3><p>Ease In / Out زي الأفتر بالظبط على أي كيفريمز في بريمير، بدوسة.</p></div></div>
+      <div class="card reveal"><div class="art a-safe"><div class="ph"><i class="z t"></i><i class="z b"></i><i class="z r"></i><i class="ok"></i><span class="ic" style="top:52%"></span><span class="ic" style="top:64%"></span><span class="ic" style="top:76%"></span></div></div>
+        <div class="tx"><span class="tag">جديد</span><h3>المنطقة الآمنة</h3><p>شوف الفريم هيبان إزاي على TikTok وReels وShorts وFacebook — بأزرار التطبيق نفسها، والمنطقة اللي لازم الكلام يفضل جواها.</p></div></div>
+      <div class="card reveal"><div class="art a-sfx" id="sfx"></div>
+        <div class="tx"><span class="tag">ساوند</span><h3>مكتبة الساوند إيفيكتس</h3><p>فولدرات الساوند بتاعتك جوه البانل: تسمع وتدوّر وتسحب على التايملاين.</p></div></div>
+    </div>
+  </section>
 
-  <h2>التثبيت</h2>
-  <ol>
-    <li>نزّل الملف وفك الضغط.</li>
-    <li>دبل كليك على <code>Install ENP.bat</code> (أول مرة بينزّل ffmpeg لوحده).</li>
-    <li>افتح بريمير ومن فوق: <code>Window ▸ Extensions ▸ ENP</code></li>
-  </ol>
+  <section class="wrap" id="install">
+    <div class="sh reveal"><div class="kicker">التسطيب</div><h2>3 خطوات وتبدأ</h2><p>مش محتاج صلاحيات مدير ولا أي برامج تانية.</p></div>
+    <div class="os"><button type="button" data-os="win" class="on">ويندوز</button><button type="button" data-os="mac">ماك</button></div>
+    <div class="steps" data-for="win">
+      <div class="step reveal"><h4>نزّل وفك الضغط</h4><p>نزّل <code>ENP-Setup.zip</code> وفك الضغط في أي مكان، وسيب الملفات مع بعض.</p></div>
+      <div class="step reveal"><h4>شغّل المثبّت</h4><p>دبل كليك على <code>Install ENP.bat</code> واستنى لحد ما يقول Installed.</p></div>
+      <div class="step reveal"><h4>افتح من بريمير</h4><p>اقفل بريمير وافتحه، ومن فوق: <code>Window ▸ Extensions ▸ ENP</code></p></div>
+    </div>
+    <div class="steps hide" data-for="mac">
+      <div class="step reveal"><h4>نزّل وفك الضغط</h4><p>نزّل <code>ENP-Setup-Mac.zip</code> ودبل كليك عليه عشان يتفك.</p></div>
+      <div class="step reveal"><h4>شغّل المثبّت</h4><p>كليك يمين على <code>Install ENP.command</code> ▸ Open ▸ Open (أول مرة بس، عشان الماك بيسأل).</p></div>
+      <div class="step reveal"><h4>افتح من بريمير</h4><p>اقفل بريمير وافتحه، ومن فوق: <code>Window ▸ Extensions ▸ ENP</code></p></div>
+    </div>
+  </section>
 
-  <h2>أسئلة</h2>
-  <div class="faq">
-    <div><b>بيرفع ملفاتي على النت؟</b><p>لأ. كل حاجة بتتعمل على جهازك، حتى الكابشن.</p></div>
-    <div><b>التحديثات؟</b><p>البانل بيحدّث نفسه، ولو أي تحديث ماشتغلش بيرجع للنسخة اللي قبله لوحده.</p></div>
-    <div><b>ماك؟</b><p>حاليًا ويندوز بس.</p></div>
-  </div>
-  <footer>ENP · Editing Power Tools</footer>
-</div>
+  <section class="wrap" id="guide">
+    <div class="sh reveal"><div class="kicker">إزاي تستخدمها</div><h2>شرح سريع لكل أداة</h2><p>كل أداة فيها خطوات قليلة، وكل حاجة بتنزل على التايملاين على طول.</p></div>
+    <div class="guide">
+      <details class="reveal"><summary><span class="ico">🎠</span>كاروسيل 3D</summary><ol><li>من تاب <b>كاروسيل</b> اختار الصور أو الكليبات (من التايملاين أو من البروجكت).</li><li>اختار الشكل من الأشكال الجاهزة وعدّل السرعة والمسافات.</li><li>دوس <b>رندر</b> — بينزل على التايملاين عند المؤشر.</li></ol></details>
+      <details class="reveal"><summary><span class="ico">✨</span>نص متحرك وستايل أبل</summary><ol><li>من تاب <b>نص</b> اكتب الكلام واختار الخط.</li><li>اختار الحركة (فيه 7 حركات أبل: كلمة كلمة بالبلور، فوكس، جانبي…).</li><li>دوس <b>حطه على التايملاين</b>.</li></ol></details>
+      <details class="reveal"><summary><span class="ico">🫧</span>Liquid Glass والأشكال</summary><ol><li>من تاب <b>جلاس</b> دوس «هات الفريم» عشان تشوفه على الفيديو بتاعك.</li><li>اختار شكل (نجمة، قمر، قلب، كورة، فقاعة…) وكبّر <b>سُمك 3D</b>.</li><li>من «الحركة» اختار <b>طالع من نقطة</b> ودوس «حدد النقطة» وبعدين على المكان اللي يطلع منه.</li><li>مع <b>لايف</b> شغال: أي تعديل أو تحريك في بريمير بيتحدّث لوحده.</li></ol></details>
+      <details class="reveal"><summary><span class="ico">〰️</span>نص على خط</summary><ol><li>من تاب <b>نص على خط</b> اختار شكل جاهز (قوس، موجة، دايرة…) أو دوس <b>قلم</b> وارسم: دوس لكل نقطة واسحب للمنحنى.</li><li>النقط الزرقا بتعوّج المنحنى، Alt بيكسرها، ودبل كليك يقلب النقطة حادة/ناعمة.</li><li>تحكم في <b>حجم البداية</b> و<b>حجم النهاية</b> ومكان الكلام على الخط، واختار الدخول.</li></ol></details>
+      <details class="reveal"><summary><span class="ico">🅰️</span>مؤثرات على الكلام اللي على التايملاين</summary><ol><li>حدد كليبات الكلام في التايملاين (كذا واحد مع بعض).</li><li>من تاب <b>مؤثرات</b> دوس على دخول، وبعدين خروج، وبعدين حركة مستمرة لو عايز.</li><li>«شيل التأثيرات» بيرجّعهم زي ما كانوا.</li></ol></details>
+      <details class="reveal"><summary><span class="ico">💬</span>كابشن تلقائي</summary><ol><li>من تاب <b>كابشن</b> اختار اللهجة ودوس «نزّل المحرك» أول مرة بس.</li><li>اختار الجزء (المختار / In-Out / السيكوينس كله) ودوس <b>اسمع واكتب</b>.</li><li>راجع الكلام: <b>Enter</b> بين كلمتين بيقسم الجملة، وBackspace في أول السطر بيلزقها.</li><li>حطه على التايملاين بستايلك، أو احفظ <b>SRT</b> في أي فولدر.</li></ol></details>
+      <details class="reveal"><summary><span class="ico">✂️</span>فيرست كت (قص السكتات)</summary><ol><li>من تاب <b>قص السكتات</b> اختار تراك صوت الكلام ودوس «اسمع».</li><li>بص على الخريطة وظبط الحساسية وأقصر سكتة.</li><li>دوس <b>اعمل الفيرست كت</b> — بيطلع سيكوينس جديد متقصوص.</li></ol></details>
+      <details class="reveal"><summary><span class="ico">📱</span>المنطقة الآمنة</summary><ol><li>من تاب <b>المنطقة الآمنة</b> دوس «هات الفريم» واختار المنصة (TikTok / Reels / Shorts / Facebook أو كلهم).</li><li>خلي الكلام والوشوش جوه الخط الأخضر — الأحمر بيتغطى بأزرار التطبيق.</li><li>تقدر تحط الدليل على التايملاين وانت بتمنتج، بس اقفله قبل الإكسبورت.</li></ol></details>
+      <details class="reveal"><summary><span class="ico">🔍</span>زووم وتراكينج</summary><ol><li><b>زووم</b>: اختار الكليبات ودوس «اسمع الكلام»، اختار إحساس الحركة، وبعدين «حط الزووم».</li><li><b>تراكينج</b>: هات الفريم، ارسم مربع على حاجة أو اسحب 4 أركان على سطح، ودوس «ابدأ».</li><li>بعدها اختار «حط نص أو صورة» — بيتلزق على السطح وياخد منظوره.</li></ol></details>
+    </div>
+  </section>
+
+  <section class="wrap" id="faq">
+    <div class="sh reveal"><div class="kicker">أسئلة</div><h2>أسئلة بتتسأل كتير</h2></div>
+    <div class="guide">
+      <details class="reveal"><summary>هل ملفاتي بتترفع على النت؟</summary><ol><li>لأ. كل حاجة — حتى الكابشن — بتشتغل على جهازك.</li></ol></details>
+      <details class="reveal"><summary>التحديثات بتوصل إزاي؟</summary><ol><li>البانل بيقولك لما يكون فيه تحديث وبيسطبه بدوسة. ولو تحديث ماشتغلش، بيرجع للنسخة اللي قبله لوحده.</li></ol></details>
+      <details class="reveal"><summary>أنهي نسخ بريمير بتشتغل؟</summary><ol><li>Premiere Pro من 2019 لحد 2026 على ويندوز وماك (Intel و Apple Silicon).</li></ol></details>
+      <details class="reveal"><summary>البانل مش ظاهر في Window ▸ Extensions</summary><ol><li>اتأكد إنك قفلت بريمير خالص وفتحته تاني بعد التسطيب، وشغّل المثبّت مرة كمان.</li></ol></details>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta reveal">
+      <h2>جاهز توفّر ساعات من شغلك؟</h2>
+      <p style="color:var(--mut);margin:0 0 6px">نزّل ENP وابدأ في دقيقتين.</p>
+      <div class="dl"><a class="btn pri" href="releases/ENP-Setup.zip">تحميل لويندوز</a><a class="btn sec" href="releases/ENP-Setup-Mac.zip">تحميل لماك</a></div>
+    </div>
+  </section>
+</main>
+<footer class="wrap">ENP — Editing Power Tools for Premiere Pro</footer>
+
+<script>
+(function () {
+  /* carousel cards */
+  var ring = document.getElementById('ring'), cols = [['#ff4d7d', '#6b1030'], ['#f2c26b', '#8a4b17'], ['#b36bff', '#3a1366'], ['#4dd2ff', '#123e66'], ['#ff8a4d', '#6b2410'], ['#7dff9e', '#0f4d2a']];
+  cols.forEach(function (c, i) { var d = document.createElement('div'); d.style.background = 'linear-gradient(' + c[0] + ',' + c[1] + ')'; d.style.transform = 'rotateY(' + (i * 60) + 'deg) translateZ(170px)'; ring.appendChild(d); });
+  var art = document.getElementById('art-car'); art.innerHTML = '<div class="car"><div class="ring" style="width:70px;height:100px">' + ring.innerHTML.replace(/translateZ\(170px\)/g, 'translateZ(105px)') + '</div></div>';
+  /* waves */
+  function bars(el, n, h) { for (var i = 0; i < n; i++) { var b = document.createElement('i'); b.style.height = (8 + Math.abs(Math.sin(i * 1.7)) * h) + 'px'; b.style.animationDelay = (i * .07) + 's'; el.appendChild(b); } }
+  bars(document.getElementById('wave'), 26, 22); bars(document.getElementById('sfx'), 34, 70);
+  /* OS tabs: show the right steps, and put this computer's download first */
+  var mac = /Mac/i.test(navigator.platform || navigator.userAgent);
+  function setOS(o) { document.querySelectorAll('.os button').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-os') === o); }); document.querySelectorAll('.steps').forEach(function (s) { s.classList.toggle('hide', s.getAttribute('data-for') !== o); }); }
+  document.querySelectorAll('.os button').forEach(function (b) { b.addEventListener('click', function () { setOS(b.getAttribute('data-os')); }); });
+  if (mac) { setOS('mac'); var dl = document.getElementById('download'), w = dl.querySelector('[data-os="win"]'), m = dl.querySelector('[data-os="mac"]'); dl.insertBefore(m, w); m.className = 'btn pri'; w.className = 'btn sec'; }
+  /* version */
+  fetch('latest.json?t=' + Date.now()).then(function (r) { return r.json(); }).then(function (j) { document.getElementById('ver').textContent = j.version; }).catch(function () {});
+  /* reveal on scroll */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .12 }) : null;
+  document.querySelectorAll('.reveal').forEach(function (el) { if (io) io.observe(el); else el.classList.add('in'); });
+})();
+</script>
 </body>
 </html>

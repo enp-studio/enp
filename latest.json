@@ -1,6 +1,6 @@
 {
-  "version": "2.2.0",
-  "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.2.0.zip",
-  "sha256": "b699da5bed46c5063cd4766670e05404d8fe157fa32d10ada6d3975edb620ffa",
-  "notes": "كابشن للسيكوينس كله + فيرست كت + 48 مؤثر للنص + جلاس لايف + زووم سلس + أنيميشن أبل"
+  "version": "2.3.0",
+  "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.3.0.zip",
+  "sha256": "f8cfcf1755c156a893fb7a86cd9c49d49d98c58bcdbde21ae95cd98e4720c908",
+  "notes": "جديد: نص على خط + أشكال جلاس 3D + تراكينج على الأسطح + المنطقة الآمنة + تقسيم الكابشن وحفظه SRT + نسخة ماك"
 }
