@@ -1,6 +1,6 @@
 {
-  "version": "2.3.0",
-  "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.3.0.zip",
-  "sha256": "f8cfcf1755c156a893fb7a86cd9c49d49d98c58bcdbde21ae95cd98e4720c908",
-  "notes": "جديد: نص على خط + أشكال جلاس 3D + تراكينج على الأسطح + المنطقة الآمنة + تقسيم الكابشن وحفظه SRT + نسخة ماك"
+  "version": "2.4.0",
+  "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.4.0.zip",
+  "sha256": "c81be3020daeb8563beca42b57ded6c75fe10e46c396c800be63287f812e6948",
+  "notes": "أشكال الجلاس 3D بتلف 360° في لووب وترتيب جديد للجلاس · النص بيمشي على الخط من أول نقطة لآخر نقطة بأشكال وسرعات + إصلاح جلب الفريم · تاب تنضيف الصوت باحتراف · سبيد رامب لكذا مشهد كأنهم مشهد واحد · اللوجو الجديد"
 }
