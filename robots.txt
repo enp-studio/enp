@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://enp-studio.github.io/enp/sitemap.xml
