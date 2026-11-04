@@ -1,0 +1,37 @@
+name: ENP libraries
+
+# Keeps copies of the open-source libraries ENP is built with (three.js, world map borders)
+# in the "libs" release. Run it from: Actions > ENP libraries > Run workflow.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  libs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download
+        run: |
+          set -e
+          mkdir -p out && cd out
+          npm pack three@0.160.0 world-atlas@2.0.2 topojson-client@3.1.0
+          for f in *.tgz; do d="${f%.tgz}"; mkdir -p "$d"; tar -xzf "$f" -C "$d"; done
+          cp three-0.160.0/package/build/three.min.js three.min.js
+          cp three-0.160.0/package/LICENSE three-LICENSE.txt
+          cp three-0.160.0/package/examples/jsm/environments/RoomEnvironment.js RoomEnvironment.js
+          cp world-atlas-2.0.2/package/countries-50m.json countries-50m.json
+          cp world-atlas-2.0.2/package/countries-110m.json countries-110m.json
+          cp world-atlas-2.0.2/package/LICENSE world-atlas-LICENSE.txt
+          cp topojson-client-3.1.0/package/dist/topojson-client.min.js topojson-client.min.js
+          cp topojson-client-3.1.0/package/LICENSE topojson-LICENSE.txt
+          rm -rf *.tgz three-0.160.0 world-atlas-2.0.2 topojson-client-3.1.0
+          ls -la
+      - name: Put them in the "libs" release (pre-release, never "Latest")
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          R=${{ github.repository }}
+          gh release view libs -R $R >/dev/null 2>&1 || gh release create libs -R $R --prerelease --title "ENP libraries" --notes "Open-source libraries ENP is built with. Not an ENP version."
+          gh release upload libs out/* -R $R --clobber
