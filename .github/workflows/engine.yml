@@ -1,0 +1,77 @@
+name: ENP engines
+
+# Builds the Mac caption engine and keeps a backup copy of every engine file
+# in the "engine" release, so ENP can download them even when the original source is blocked.
+# Run it from: Actions > ENP engines > Run workflow.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mac-whisper:
+    runs-on: macos-14
+    steps:
+      - name: Get whisper.cpp
+        run: git clone --depth 1 --branch v1.9.1 https://github.com/ggml-org/whisper.cpp src
+      - name: Build Apple Silicon
+        run: |
+          cmake -S src -B b-arm -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_OSX_ARCHITECTURES=arm64 \
+            -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 -DGGML_NATIVE=OFF -DGGML_METAL=ON -DGGML_METAL_EMBED_LIBRARY=ON \
+            -DWHISPER_BUILD_TESTS=OFF -DWHISPER_BUILD_SERVER=OFF
+          cmake --build b-arm --config Release -j 4 --target whisper-cli
+      - name: Build Intel
+        run: |
+          cmake -S src -B b-x64 -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_OSX_ARCHITECTURES=x86_64 \
+            -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15 -DGGML_NATIVE=OFF -DGGML_METAL=OFF -DGGML_AVX=ON -DGGML_AVX2=ON -DGGML_FMA=ON -DGGML_F16C=ON \
+            -DWHISPER_BUILD_TESTS=OFF -DWHISPER_BUILD_SERVER=OFF
+          cmake --build b-x64 --config Release -j 4 --target whisper-cli
+      - name: One file for both Macs
+        run: |
+          mkdir -p out/whisper
+          lipo -create b-arm/bin/whisper-cli b-x64/bin/whisper-cli -output out/whisper/whisper-cli
+          chmod 755 out/whisper/whisper-cli
+          codesign --force --sign - out/whisper/whisper-cli
+          lipo -info out/whisper/whisper-cli
+          otool -L out/whisper/whisper-cli
+          (out/whisper/whisper-cli --help 2>&1 | head -5) || true
+          cd out && ditto -c -k --keepParent whisper whisper-cli-macos.zip
+      - uses: actions/upload-artifact@v4
+        with: { name: mac, path: out/whisper-cli-macos.zip }
+
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download the originals
+        run: |
+          set -e
+          mkdir -p out w && cd w
+          dl() { curl -L --fail --retry 4 --retry-delay 5 -o "$1" "$2"; }
+          dl ../out/whisper-bin-x64.zip https://github.com/ggml-org/whisper.cpp/releases/download/v1.9.1/whisper-bin-x64.zip
+          dl ../out/ggml-small-q5_1.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small-q5_1.bin
+          dl ../out/ggml-large-v3-turbo-q5_0.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo-q5_0.bin
+          # Windows ffmpeg: keep only ffmpeg.exe (smaller download for users)
+          dl ffw.zip https://github.com/GyanD/codexffmpeg/releases/download/7.1/ffmpeg-7.1-essentials_build.zip
+          unzip -q ffw.zip && cp "$(find . -name ffmpeg.exe | head -1)" ffmpeg.exe && zip -9 -q ../out/ffmpeg-win64.zip ffmpeg.exe
+          # Mac ffmpeg
+          dl ../out/ffmpeg-mac-arm64.zip https://ffmpeg.martin-riedl.de/redirect/latest/macos/arm64/release/ffmpeg.zip
+          dl ../out/ffmpeg-mac-x64.zip https://ffmpeg.martin-riedl.de/redirect/latest/macos/amd64/release/ffmpeg.zip || dl ../out/ffmpeg-mac-x64.zip https://evermeet.cx/ffmpeg/getrelease/ffmpeg/zip
+          ls -la ../out
+      - uses: actions/upload-artifact@v4
+        with: { name: mirror, path: out/ }
+
+  release:
+    needs: [mac-whisper, mirror]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with: { path: files, merge-multiple: true }
+      - name: Put them in the "engine" release (pre-release, never "Latest")
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          R=${{ github.repository }}
+          gh release view engine -R $R >/dev/null 2>&1 || gh release create engine -R $R --prerelease --title "ENP engines" --notes "Backup copies of the engines ENP downloads (caption engine, language models, ffmpeg). Not an ENP version."
+          gh release upload engine files/* -R $R --clobber
+          gh release view engine -R $R
