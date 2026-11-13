@@ -1,8 +1,15 @@
 {
-  "version": "2.9.3",
-  "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.9.3.zip",
-  "sha256": "7e1062a4ee728a3cca9185241c94b3cc66c44ef7c3c0a0ba2ad3988431e94c7b",
-  "notes": "مساعد ENP الذكي: اربطه بـ Gemini وقولّه أي حاجة وهو ينفّذ بأدوات ENP • أكتر من 100 مجسم 3D جديد: عربيات وطيارات وسفن وحيوانات وأكلات • 16 قالب جلاس بشكل ليكويد واحد • 5 مشاهد جاهزة و8 إنسيرتات جديدة • النص على الخط: ارسم بإيدك + 6 حركات جديدة • المعاينة بتجيب كل الطبقات من غير ما بريمير يقف • الفيرست كت بيشيل التلعثم والتكرار • التلوين على Adjustment Layer • خانة ألوان بالـ HEX • تواصل معانا على إنستجرام @enp.tool وواتساب",
-  "title": "ENP 2.9.3 نزل — ومعاه مساعد ذكي",
-  "force_after_days": 3
+  "version": "2.9.4",
+  "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.9.4.zip",
+  "sha256": "6366925f745c77f6a55e38e729a693d7be2d8e5dd3dd2bc557c52a3d55c0645b",
+  "notes": "ENP بقى يشتغل جوه After Effects كمان — نفس البلاجين ونفس التحديث\nأدوات الجرافيك والموشن بتنزل ليرات في الكومب\nالموجرتس بتدخل كومب جاهز تعدّله في أفتر\nالكابشن والزووم والكيفريمز شغالين في أفتر كمان",
+  "title": "ENP بقى على After Effects كمان",
+  "force_after_days": 3,
+  "news": {
+    "id": "ae1",
+    "title": "ENP متاح دلوقتي على After Effects",
+    "text": "نفس البلاجين بقى يشتغل جوه After Effects كمان — مش محتاج تحمّل حاجة تانية.\nافتح After Effects ومن Window ▸ Extensions ▸ ENP.\nأدوات الجرافيك والموشن والكابشن والزووم والكيفريمز بتنزل ليرات في الكومب.",
+    "url": "https://enp-studio.github.io/enp/#dl-ae",
+    "btn": "شوف التفاصيل"
+  }
 }
