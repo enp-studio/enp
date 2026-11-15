@@ -1,9 +1,9 @@
 {
-  "version": "2.9.4",
-  "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.9.4.zip",
-  "sha256": "6366925f745c77f6a55e38e729a693d7be2d8e5dd3dd2bc557c52a3d55c0645b",
-  "notes": "ENP بقى يشتغل جوه After Effects كمان — نفس البلاجين ونفس التحديث\nأدوات الجرافيك والموشن بتنزل ليرات في الكومب\nالموجرتس بتدخل كومب جاهز تعدّله في أفتر\nالكابشن والزووم والكيفريمز شغالين في أفتر كمان",
-  "title": "ENP بقى على After Effects كمان",
+  "version": "2.9.5",
+  "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.9.5.zip",
+  "sha256": "866a2d81256fe86b451933acf0be14b97946b46d38b524b57cd73427e355c5ef",
+  "notes": "ري تاتش جديد للوش: تنعيم، إضاءة، عيون وشفايف، فلاتر، وإيفيكتات زي سناب شات\nستايلات الكلام بقت بمعاينة متحركة + 10 قوالب تتعدّل من Effect Controls\n18 مشهد جاهز جديد: وثائقي، موشن جرافيك، SaaS، وشخصيات زجاج\nأراضي العقارات في التراكينج\nالفيرست كت بقى يحافظ على ألوان ودوران الكليب",
+  "title": "تحديث ENP الجديد: ري تاتش ومشاهد وقوالب كلام",
   "force_after_days": 3,
   "news": {
     "id": "ae1",
