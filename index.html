@@ -16,14 +16,14 @@
 <meta property="og:url" content="https://enp-studio.github.io/enp/">
 <meta property="og:title" content="ENP — أدوات مونتاج جوه بريمير | ENP Plugin for Premiere Pro">
 <meta property="og:description" content="35 أداة جوه بريمير: جرافيك وألوان وانتقالات وكابشن وصوت — كله على جهازك. ENP plugin / extension for Adobe Premiere Pro & DaVinci Resolve.">
-<meta property="og:image" content="https://enp-studio.github.io/enp/og.jpg?v=2922">
+<meta property="og:image" content="https://enp-studio.github.io/enp/og.jpg?v=296">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="ENP — Editing Power Tools for Adobe Premiere Pro">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ENP — أدوات مونتاج جوه بريمير | ENP Plugin for Premiere Pro">
 <meta name="twitter:description" content="35 أداة جوه بريمير: جرافيك، نص متحرك، كابشن تلقائي، صوت وانتقالات — كله على جهازك.">
-<meta name="twitter:image" content="https://enp-studio.github.io/enp/og.jpg?v=2922">
+<meta name="twitter:image" content="https://enp-studio.github.io/enp/og.jpg?v=296">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -91,7 +91,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 @keyframes rec { 50% { opacity: .25; } }
 .hero h1 { font-size: clamp(42px, 7.4vw, 104px); line-height: 1.22; margin: 22px 0 18px; font-weight: 900; letter-spacing: -.01em; }
 [dir=ltr] .hero h1 { letter-spacing: -.035em; }
-.hero h1 .ac { background: linear-gradient(100deg, #fff 0%, #e6a3b4 40%, #9E1B3B 90%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero h1 .ac { color: #e6a3b4; }
+.hero h1 .ac .kw > span { background: linear-gradient(100deg, #ffffff 0%, #e6a3b4 45%, #c23a5c 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; padding: 0 .04em; }
 .hero p.lead { font-size: clamp(16px, 1.6vw, 19px); color: var(--mut); max-width: 640px; margin: 0 0 30px; }
 .ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .pills { display: flex; gap: 10px; margin-top: 30px; flex-wrap: wrap; }
@@ -269,6 +270,39 @@ footer a:hover { color: var(--ink); }
 .hud .trk .mk span { position: absolute; bottom: -1px; left: 4px; font: 500 8.5px/1 var(--mono); color: var(--dim); letter-spacing: .08em; white-space: nowrap; }
 .hud .trk .mk.on span { color: #f1b6c4; }
 .hud .dl { pointer-events: auto; }
+
+/* pinned scroll scenes */
+.pin { height: 260vh; position: relative; }
+.pin .stick { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; overflow: hidden; }
+.tlw { width: 100%; display: grid; grid-template-columns: 1fr 1.35fr; gap: 40px; align-items: center; }
+.tlcv { width: 100%; height: min(78vh, 640px); display: block; }
+.ringsec { height: 240vh; }
+.ringstage { position: relative; width: 100%; height: 100vh; perspective: 1400px; display: grid; place-items: center; }
+.ringin { position: absolute; left: 50%; top: 56%; width: 0; height: 0; transform-style: preserve-3d; }
+.rt { position: absolute; left: -70px; top: -26px; width: 140px; height: 52px; display: flex; align-items: center; gap: 8px; padding: 0 12px; border-radius: 14px; background: rgba(18,18,22,.85); border: 1px solid var(--line2); backface-visibility: hidden; font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; }
+.rt i { width: 18px; height: 18px; border-radius: 6px; flex: none; }
+.ringc { position: relative; text-align: center; pointer-events: none; display: flex; flex-direction: column; align-items: center; }
+.ringc b { font-size: clamp(90px, 16vw, 200px); line-height: 1; font-weight: 800; text-shadow: 0 0 60px rgba(158,27,59,.8); }
+.ringc span:last-child { color: var(--mut); font-size: 18px; margin-top: 6px; }
+.ringc .tag { margin-bottom: 70px; }
+/* tools: preview monitor */
+.toolsx { display: grid; grid-template-columns: 1fr 1.3fr; gap: 14px; align-items: start; }
+.mon { position: sticky; top: 90px; padding: 14px; }
+.monh { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 13px; }
+.monh i { width: 8px; height: 8px; border-radius: 50%; background: #e0263f; box-shadow: 0 0 8px #e0263f; animation: rec 1.4s infinite; }
+.monh .mono { color: var(--mut); font-size: 12px; } .monh b { margin-inline-start: auto; font-size: 15px; }
+#monCv { width: 100%; aspect-ratio: 16 / 9; display: block; border-radius: 12px; background: #000; }
+#monDesc { margin: 10px 2px 2px; color: var(--ink); font-size: 14.5px; min-height: 2.6em; }
+.monk { color: var(--dim); font-size: 12px; }
+.toolsx .cats { grid-template-columns: 1fr; }
+.chip { cursor: pointer; font: inherit; font-size: 13px; }
+.chip.on { background: var(--acc); border-color: transparent; color: #fff; box-shadow: 0 0 16px var(--glow); }
+@media (max-width: 980px) {
+  .tlw { grid-template-columns: 1fr; gap: 10px; } .tlw .lcopy p, .tlw .lsteps { display: none; } .tlcv { height: 58vh; }
+  .tlw .lcopy h2 { font-size: 30px; margin: 6px 0 0; }
+  .toolsx { grid-template-columns: 1fr; } .mon { position: relative; top: auto; }
+  .rt { width: 110px; left: -55px; font-size: 11px; height: 44px; top: -22px; }
+}
 @media (max-width: 980px) {
   .nav .links { display: none; }
   .layers { height: auto; } .layers .stick { position: relative; height: auto; padding: 100px 0; } .layers .stick .wrap { grid-template-columns: 1fr; } .lscene { height: 520px; }
@@ -309,7 +343,6 @@ footer a:hover { color: var(--ink); }
     <a class="pill mag" href="#dl"><b class="ae">Ae</b>After Effects</a>
     <a class="pill mag" href="#dl"><b class="dv"><span><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i></span></b>DaVinci Resolve</a>
   </div>
-  <div class="side mono rv">24 FPS · 1920×1080<br>WIN · MAC<br>AR · EN</div>
 </div></section>
 
 <section class="layers" id="layers" data-mk="1"><div class="stick"><div class="wrap">
@@ -327,13 +360,18 @@ footer a:hover { color: var(--ink); }
   </div></div>
 </div></div></section>
 
-<section class="sec" id="power" data-mk="2"><div class="wrap">
-  <div class="sh"><div><span class="tag">03 / FEATURES</span><h2 class="kin"><span data-en="Heavy engines, light work.">محركات تقيلة، شغل خفيف.</span></h2></div><p class="rv"><span data-en="The strongest parts of ENP — the ones that save you the most time.">أقوى حاجات في ENP — اللي بتوفّر عليك أكتر وقت.</span></p></div>
+<section class="pin" id="tl" data-mk="2"><div class="stick"><div class="wrap tlw">
+  <div class="lcopy"><span class="tag">03 / TIMELINE</span><h2><span data-en="Everything lands&lt;br&gt;on your timeline.">كل حاجة بتنزل<br>على التايملاين.</span></h2><p><span data-en="No exporting, no importing: each tool renders and drops the layer exactly over your shot.">مش بتصدّر ولا بتستورد: الأداة بترندر وبتحط الليرة في مكانها فوق اللقطة بالظبط.</span></p><ul class="lsteps"><li><b>01</b><span data-en="The shot and the clean audio">اللقطة والصوت النضيف</span></li><li><b>02</b><span data-en="Glass over the shot">جلاس فوق اللقطة</span></li><li><b>03</b><span data-en="Captions word by word">كابشن كلمة بكلمة</span></li><li><b>04</b><span data-en="A sound effect in place">مؤثر صوت في مكانه</span></li></ul></div>
+  <canvas id="tlCv" class="tlcv"></canvas>
+</div></div></section>
+
+<section class="sec" id="power" data-mk="3"><div class="wrap">
+  <div class="sh"><div><span class="tag">04 / FEATURES</span><h2 class="kin"><span data-en="Heavy engines, light work.">محركات تقيلة، شغل خفيف.</span></h2></div><p class="rv"><span data-en="The strongest parts of ENP — the ones that save you the most time.">أقوى حاجات في ENP — اللي بتوفّر عليك أكتر وقت.</span></p></div>
   <div class="spots"><article class="card spot rv" data-k="ae"><div class="sic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M7.5 16l2.5-8 2.5 8M8.3 13.5h3.4M14.5 13.2h4a2 2 0 0 0-4-.2c0 1.6 1 2.6 2.4 2.6.7 0 1.2-.2 1.6-.5"/></svg></div><em class="bdg">NEW</em><h3><span data-en="Native After Effects">أفتر إفكتس أصلي</span></h3><p><span data-en="The same install runs inside After Effects — graphics land as editable layers and comps, not flat clips.">نفس التسطيبة بتشتغل جوه After Effects — الجرافيك بينزل ليرات وكومبات تتعدّل، مش كليبات مسطّحة.</span></p></article><article class="card spot rv" data-k="rnn"><div class="sic"><svg viewBox="0 0 24 24"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 11v2M21 12h0"/></svg></div><em class="bdg pro">PRO ENGINE</em><h3><span data-en="RNN voice isolation">عزل صوت بشبكة RNN</span></h3><p><span data-en="An AI model separates the voice from hum, AC and street noise — on your machine.">نموذج ذكاء اصطناعي بيفصل صوت المتكلم عن الدوشة والتكييف والشارع — على جهازك.</span></p></article><article class="card spot rv" data-k="rt"><div class="sic"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="6"/><path d="M9.5 9h.01M14.5 9h.01M9.5 12.5c1.5 1.2 3.5 1.2 5 0M6 20c1.5-2 3.6-3 6-3s4.5 1 6 3"/></svg></div><em class="bdg">NEW</em><h3><span data-en="Retouch studio">ستوديو ري تاتش</span></h3><p><span data-en="Texture-keeping skin smoothing, light reshaping, eyes and lips, 14 filters and face effects.">تنعيم بشرة بيحافظ على الملمس، إعادة توزيع الإضاءة، عيون وشفايف، 14 فلتر وإيفيكتات وش.</span></p></article><article class="card spot rv" data-k="mg"><div class="sic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 10h7M7 14h10"/></svg></div><em class="bdg">NEW</em><h3><span data-en="16 glass + 20 text MOGRTs">16 جلاس + 20 قالب كلام</span></h3><p><span data-en="MOGRT templates you edit from Essential Graphics and Effect Controls — landscape and vertical.">قوالب MOGRT تتعدّل من Essential Graphics و Effect Controls — عرضي ورأسي.</span></p></article><article class="card spot rv" data-k="sc"><div class="sic"><svg viewBox="0 0 24 24"><path d="M4 18l5-7 4 4 3-3 4 6zM4 6h16"/></svg></div><em class="bdg">NEW</em><h3><span data-en="39 ready scenes + land tracking">39 مشهد جاهز + تراكينج الأراضي</span></h3><p><span data-en="Documentary, SaaS, motion graphics, cinematic reels and a neon puzzle, plus plot borders that stay glued to the ground.">وثائقي و SaaS وموشن جرافيك وريلز سينمائي وبازل نيون، وحدود أرض بتفضل لازقة في الكادر لآخر الكليب.</span></p></article><article class="card spot rv" data-k="cut"><div class="sic"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.5"/><circle cx="6" cy="17" r="2.5"/><path d="M8 8.5L20 17M8 15.5L20 7"/></svg></div><em class="bdg pro">PRO ENGINE</em><h3><span data-en="A first cut that keeps the look">فيرست كت بيحافظ على اللون</span></h3><p><span data-en="Removes silences, retakes and «umm» into a new sequence — without touching color or rotation.">بيشيل السكتات والتكرار و«اممم» في سيكوينس جديد — من غير ما يبوّظ الألوان ولا دوران اللقطة.</span></p></article></div>
 </div></section>
 
-<section class="sec" id="sandbox" data-mk="3"><div class="wrap">
-  <div class="sh"><div><span class="tag">04 / TRY IT</span><h2 class="kin"><span data-en="Try it before you install.">جرّبها قبل ما تحمّل.</span></h2></div><p class="rv"><span data-en="A simplified in-browser demo of what the plugin does on your own footage.">ده عرض مبسّط في المتصفح لنفس الأفكار اللي بتشتغل جوه البلاجين على الفيديو بتاعك.</span></p></div>
+<section class="sec" id="sandbox" data-mk="4"><div class="wrap">
+  <div class="sh"><div><span class="tag">05 / TRY IT</span><h2 class="kin"><span data-en="Try it before you install.">جرّبها قبل ما تحمّل.</span></h2></div><p class="rv"><span data-en="A simplified in-browser demo of what the plugin does on your own footage.">ده عرض مبسّط في المتصفح لنفس الأفكار اللي بتشتغل جوه البلاجين على الفيديو بتاعك.</span></p></div>
   <div class="sbx">
     <div class="card wide rv">
       <div class="sbh"><div><h3><span data-en="Retouch — before &amp; after">ري تاتش — قبل وبعد</span></h3><small><span data-en="Drag the line">اسحب الخط</span></small></div><span class="mono">A · RETOUCH</span></div>
@@ -353,16 +391,20 @@ footer a:hover { color: var(--ink); }
   </div>
 </div></section>
 
-<section class="sec" id="tools" data-mk="4"><div class="wrap">
-  <div class="sh"><div><span class="tag">05 / TOOLS</span><h2 class="kin"><span data-en="35 tools, 4 tabs.">35 أداة في 4 أقسام.</span></h2></div><p class="rv"><span data-en="The same grouping you’ll find in the panel.">نفس التقسيم اللي هتلاقيه جوه البانل.</span></p></div>
-  <div class="cats"><div class="card cat rv"><div class="cath"><b class="lat">01</b><h3 data-en="Edit &amp; Flow">مونتاج وحركة</h3><small class="lat">7</small></div><div class="chips"><span class="chip" data-en="Smart first cut">فيرست كت ذكي</span><span class="chip" data-en="Water drop">قطرة مية</span><span class="chip" data-en="Tracking">تراكينج</span><span class="chip" data-en="Auto zoom">زووم تلقائي</span><span class="chip" data-en="Keyframe curves">كيفريمز</span><span class="chip" data-en="Speed ramp">سبيد رامب</span><span class="chip" data-en="Transitions &amp; dust">انتقالات وغبار</span></div></div><div class="card cat rv"><div class="cath"><b class="lat">02</b><h3 data-en="Motion &amp; Text">موشن ونص</h3><small class="lat">15</small></div><div class="chips"><span class="chip" data-en="3D carousel">كاروسيل 3D</span><span class="chip" data-en="Animated text">نص متحرك</span><span class="chip" data-en="Text effects">مؤثرات النص</span><span class="chip" data-en="Text on path">نص على خط</span><span class="chip" data-en="Liquid Glass">Liquid Glass</span><span class="chip" data-en="3D icons">أيقونات 3D</span><span class="chip" data-en="3D objects">مجسمات 3D</span><span class="chip" data-en="Social">سوشيال</span><span class="chip" data-en="Lower third">لوار ثيرد</span><span class="chip" data-en="Backgrounds">خلفيات متحركة</span><span class="chip" data-en="Animated lines">خطوط متحركة</span><span class="chip" data-en="Inserts">إنسيرت</span><span class="chip" data-en="Counter">عدّاد أرقام</span><span class="chip" data-en="Ready scenes">مشاهد جاهزة</span><span class="chip" data-en="Text styles">ستايلات كلام</span></div></div><div class="card cat rv"><div class="cath"><b class="lat">03</b><h3 data-en="Retouch &amp; Audio">ري تاتش وصوت</h3><small class="lat">6</small></div><div class="chips"><span class="chip" data-en="Retouch">ري تاتش</span><span class="chip" data-en="Filters &amp; color">فلاتر وألوان</span><span class="chip" data-en="Voice isolation">عزل الصوت</span><span class="chip" data-en="Auto captions">كابشن تلقائي</span><span class="chip" data-en="Sound effects">ساوند إفكتس</span><span class="chip" data-en="Audio waves">موجات صوت</span></div></div><div class="card cat rv"><div class="cath"><b class="lat">04</b><h3 data-en="MOGRTs &amp; Kit">قوالب وأدوات</h3><small class="lat">7</small></div><div class="chips"><span class="chip" data-en="MOGRTs">موجرتس</span><span class="chip" data-en="ENP assistant">مساعد ENP</span><span class="chip" data-en="Premiere items">عناصر بريمير</span><span class="chip" data-en="Web downloads">تحميل من النت</span><span class="chip" data-en="Organize project">تنظيم المشروع</span><span class="chip" data-en="Safe zone">المنطقة الآمنة</span><span class="chip" data-en="Help">الدعم</span></div></div></div>
+<section class="pin ringsec" id="ring" data-mk="5"><div class="stick"><div class="ringstage"><div class="ringin" id="ringIn"></div>
+  <div class="ringc"><span class="tag">06 / THE KIT</span><b class="lat" id="ringNum">0</b><span><span data-en="tools in one panel">أداة في بانل واحدة</span></span></div></div></div></section>
+
+<section class="sec" id="tools" data-mk="6"><div class="wrap">
+  <div class="sh"><div><span class="tag">07 / TOOLS</span><h2 class="kin"><span data-en="35 tools, 4 tabs.">35 أداة في 4 أقسام.</span></h2></div><p class="rv"><span data-en="The same grouping you’ll find in the panel.">نفس التقسيم اللي هتلاقيه جوه البانل.</span></p></div>
+  <div class="toolsx"><div class="card mon rv"><div class="monh"><i></i><span class="mono" id="monTc">00:00:00:00</span><b id="monName"></b></div><canvas id="monCv"></canvas><p id="monDesc"></p><small class="monk"><span data-en="Hover any tool to see it work">عدّي على أي أداة تشوفها بتشتغل</span></small></div>
+  <div class="cats"><div class="card cat rv"><div class="cath"><b class="lat">01</b><h3 data-en="Edit &amp; Flow">مونتاج وحركة</h3><small class="lat">7</small></div><div class="chips"><button type="button" class="chip" data-t="cut"><span data-en="Smart first cut">فيرست كت ذكي</span></button><button type="button" class="chip" data-t="ripple"><span data-en="Water drop">قطرة مية</span></button><button type="button" class="chip" data-t="track"><span data-en="Tracking">تراكينج</span></button><button type="button" class="chip" data-t="zoom"><span data-en="Auto zoom">زووم تلقائي</span></button><button type="button" class="chip" data-t="curves"><span data-en="Keyframe curves">كيفريمز</span></button><button type="button" class="chip" data-t="ramp"><span data-en="Speed ramp">سبيد رامب</span></button><button type="button" class="chip" data-t="trans"><span data-en="Transitions &amp; dust">انتقالات وغبار</span></button></div></div><div class="card cat rv"><div class="cath"><b class="lat">02</b><h3 data-en="Motion &amp; Text">موشن ونص</h3><small class="lat">15</small></div><div class="chips"><button type="button" class="chip" data-t="carousel"><span data-en="3D carousel">كاروسيل 3D</span></button><button type="button" class="chip" data-t="text"><span data-en="Animated text">نص متحرك</span></button><button type="button" class="chip" data-t="fx"><span data-en="Text effects">مؤثرات النص</span></button><button type="button" class="chip" data-t="path"><span data-en="Text on path">نص على خط</span></button><button type="button" class="chip" data-t="glass"><span data-en="Liquid Glass">Liquid Glass</span></button><button type="button" class="chip" data-t="icons"><span data-en="3D icons">أيقونات 3D</span></button><button type="button" class="chip" data-t="obj3d"><span data-en="3D objects">مجسمات 3D</span></button><button type="button" class="chip" data-t="social"><span data-en="Social">سوشيال</span></button><button type="button" class="chip" data-t="lower"><span data-en="Lower third">لوار ثيرد</span></button><button type="button" class="chip" data-t="backgrounds"><span data-en="Backgrounds">خلفيات متحركة</span></button><button type="button" class="chip" data-t="lines"><span data-en="Animated lines">خطوط متحركة</span></button><button type="button" class="chip" data-t="insert"><span data-en="Inserts">إنسيرت</span></button><button type="button" class="chip" data-t="counter"><span data-en="Counter">عدّاد أرقام</span></button><button type="button" class="chip" data-t="scenes"><span data-en="Ready scenes">مشاهد جاهزة</span></button><button type="button" class="chip" data-t="styles"><span data-en="Text styles">ستايلات كلام</span></button></div></div><div class="card cat rv"><div class="cath"><b class="lat">03</b><h3 data-en="Retouch &amp; Audio">ري تاتش وصوت</h3><small class="lat">6</small></div><div class="chips"><button type="button" class="chip" data-t="retouch"><span data-en="Retouch">ري تاتش</span></button><button type="button" class="chip" data-t="filters"><span data-en="Filters &amp; color">فلاتر وألوان</span></button><button type="button" class="chip" data-t="clean"><span data-en="Voice isolation">عزل الصوت</span></button><button type="button" class="chip" data-t="caption"><span data-en="Auto captions">كابشن تلقائي</span></button><button type="button" class="chip" data-t="sfx"><span data-en="Sound effects">ساوند إفكتس</span></button><button type="button" class="chip" data-t="viz"><span data-en="Audio waves">موجات صوت</span></button></div></div><div class="card cat rv"><div class="cath"><b class="lat">04</b><h3 data-en="MOGRTs &amp; Kit">قوالب وأدوات</h3><small class="lat">7</small></div><div class="chips"><button type="button" class="chip" data-t="mogrts"><span data-en="MOGRTs">موجرتس</span></button><button type="button" class="chip" data-t="agent"><span data-en="ENP assistant">مساعد ENP</span></button><button type="button" class="chip" data-t="items"><span data-en="Premiere items">عناصر بريمير</span></button><button type="button" class="chip" data-t="download"><span data-en="Web downloads">تحميل من النت</span></button><button type="button" class="chip" data-t="organize"><span data-en="Organize project">تنظيم المشروع</span></button><button type="button" class="chip" data-t="safe"><span data-en="Safe zone">المنطقة الآمنة</span></button><button type="button" class="chip" data-t="support"><span data-en="Help">الدعم</span></button></div></div></div></div>
   <div class="stats"><div class="stat rv"><b class="lat">35</b><span data-en="tools in one panel">أداة في بانل واحدة</span></div><div class="stat rv"><b class="lat">2000+</b><span data-en="3D icons">أيقونة 3D</span></div><div class="stat rv"><b class="lat">74+</b><span data-en="3D &amp; hologram objects">مجسم 3D وهولوجرام</span></div><div class="stat rv"><b class="lat">240+</b><span data-en="country maps">خريطة دولة</span></div><div class="stat rv"><b class="lat">1000+</b><span data-en="sites to download from">موقع تحمّل منه</span></div></div>
   <div class="sh" style="margin:90px 0 30px"><div><span class="tag">CHANGELOG · v2.9.6</span><h2 class="kin" style="font-size:clamp(26px,3vw,38px)"><span data-en="What’s new">الجديد</span></h2></div></div>
   <ul class="news"><li class="rv"><b data-en="Dust, wave and water drop">غبار وموجة وقطرة مية</b><p><span data-en="The clip breaks into dust and blows away, or a water wave reveals what is next — between shots or at the start / end of any clip.">الكليب بيتفتت غبار ويطير، أو موجة مية بتكشف اللي بعده — بين مشهدين أو في أول وآخر أي كليب.</span></p></li><li class="rv"><b data-en="Water drop tool">أداة قطرة مية</b><p><span data-en="Click the point in the frame and control the size, number, strength, speed, calm-down and shine of the ripples.">اختار النقطة في الفريم بالماوس، وتحكّم في حجم الموج وعدده وقوته وسرعته وهدوءه ولمعته.</span></p></li><li class="rv"><b data-en="10 new scenes">10 مشاهد جديدة</b><p><span data-en="A cinematic red reels look and an assembling neon puzzle — 39 ready scenes in total.">ستايل ريلز سينمائي أحمر وبازل نيون بيتجمّع — بقى عندك 39 مشهد جاهز.</span></p></li><li class="rv"><b data-en="A new studio interface">واجهة ستوديو جديدة</b><p><span data-en="Instant search across every tool (Ctrl+K), tools you pin, and every tool keeps its preview and button in place.">بحث سريع في كل الأدوات (Ctrl+K)، أدوات بتثبّتها، وكل أداة معاينتها وزرارها ثابتين مكانهم.</span></p></li><li class="rv"><b data-en="More precise tracking">تراكينج أدق</b><p><span data-en="«Get frame» grabs exactly the frame you stand on, and a double-click resets any point or slider.">«هات الفريم» بيجيب الفريم اللي واقف عليه بالظبط، ودبل كليك بيرجّع أي نقطة أو سلايدر لأصله.</span></p></li><li class="rv"><b data-en="Face retouch">ري تاتش للوش</b><p><span data-en="Skin smoothing, light reshaping, bigger eyes and lips, full filters and phone-style face effects.">تنعيم بشرة، إعادة توزيع الإضاءة، تكبير العيون والشفايف، فلاتر كاملة، وإيفيكتات وش زي سناب شات.</span></p></li></ul>
 </div></section>
 
-<section class="sec" id="dl" data-mk="5"><div class="wrap">
-  <div class="sh"><div><span class="tag">06 / EXPORT</span><h2 class="kin"><span data-en="Pick your app.">اختار برنامجك.</span></h2></div><p class="rv"><span data-en="Premiere and After Effects share one download and one install. DaVinci has its own edition.">بريمير وأفتر إفكتس نفس الملف ونفس التسطيبة. دافنشي ليه نسخته.</span></p></div>
+<section class="sec" id="dl" data-mk="7"><div class="wrap">
+  <div class="sh"><div><span class="tag">08 / EXPORT</span><h2 class="kin"><span data-en="Pick your app.">اختار برنامجك.</span></h2></div><p class="rv"><span data-en="Premiere and After Effects share one download and one install. DaVinci has its own edition.">بريمير وأفتر إفكتس نفس الملف ونفس التسطيبة. دافنشي ليه نسخته.</span></p></div>
   <div class="dls">
     <div class="card dlc rv" data-app="pr"><div class="top"><b class="ap" style="background:#00005b;color:#9999ff">Pr</b><div><h3>Premiere Pro</h3><small><span data-en="2019 — 2026 · Windows &amp; Mac">2019 — 2026 · ويندوز وماك</span></small></div></div>
       <ul><li><span data-en="All 35 tools">كل الأدوات الـ35</span></li><li><span data-en="One-click updates inside the panel">تحديثات بدوسة من جوه البانل</span></li></ul>
@@ -395,7 +437,7 @@ footer a:hover { color: var(--ink); }
 
 <div class="hud" aria-hidden="true"><div class="in"><div class="box">
   <span class="tc"><i>●</i><span id="tc">00:00:00:00</span></span><span class="fps">24 FPS</span>
-  <div class="trk" id="trk"><div class="rl"></div><div class="fl" id="fl"></div><div class="mk" data-m="0"><span>IN</span></div><div class="mk" data-m="1"><span>LAYERS</span></div><div class="mk" data-m="2"><span>FEATURES</span></div><div class="mk" data-m="3"><span>TRY IT</span></div><div class="mk" data-m="4"><span>TOOLS</span></div><div class="mk" data-m="5"><span>OUT</span></div><div class="ph" id="ph"></div></div>
+  <div class="trk" id="trk"><div class="rl"></div><div class="fl" id="fl"></div><div class="mk" data-m="0"><span>IN</span></div><div class="mk" data-m="1"><span>LAYERS</span></div><div class="mk" data-m="2"><span>TIMELINE</span></div><div class="mk" data-m="3"><span>FEATURES</span></div><div class="mk" data-m="4"><span>TRY IT</span></div><div class="mk" data-m="5"><span>THE KIT</span></div><div class="mk" data-m="6"><span>TOOLS</span></div><div class="mk" data-m="7"><span>OUT</span></div><div class="ph" id="ph"></div></div>
 </div></div></div>
 <script>
 (function () {
@@ -409,7 +451,7 @@ footer a:hover { color: var(--ink); }
     D.documentElement.lang = e ? 'en' : 'ar'; D.documentElement.dir = e ? 'ltr' : 'rtl';
     nodes.forEach(function (n) { n.innerHTML = e ? n.getAttribute('data-en') : n.__ar; });
     D.getElementById('lang').textContent = e ? 'العربية' : 'English';
-    split(); gReset();
+    split(); gReset(); if (W.__monLang) W.__monLang(); if (W.__ringLang) W.__ringLang();
   }
   D.getElementById('lang').addEventListener('click', function () { setLang(!en); });
 
@@ -472,6 +514,7 @@ footer a:hover { color: var(--ink); }
       stack.style.setProperty('--p', e.toFixed(4));
       lsteps.forEach(function (li, i) { li.classList.toggle('on', q >= i * .22); });
     }
+    (W.__scrollers || []).forEach(function (sc) { var r2 = sc.el.getBoundingClientRect(); if (r2.bottom < -50 || r2.top > innerHeight + 50) return; var sp2 = Math.max(1, sc.el.offsetHeight - innerHeight); sc.fn(Math.min(1, Math.max(0, -r2.top / sp2))); });
   }
   addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   addEventListener('resize', function () { placeMarks(); onScroll(); });
@@ -600,6 +643,249 @@ footer a:hover { color: var(--ink); }
   D.getElementById('gst').addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; [].forEach.call(this.children, function (c) { c.classList.toggle('on', c === b); }); gstyle = b.getAttribute('data-v'); gRender(); });
   gin.addEventListener('input', gRender);
   if (!RM) setInterval(function () { if (D.activeElement !== gin) gRender(); }, 4200);
+
+  /* ================= tool previews: one small looping demo per tool (drawn live, nothing to download) ================= */
+  var TI = {"cut": {"n": ["فيرست كت ذكي", "Smart first cut"], "d": ["يشيل السكتات لوحده", "Removes silences, stutters and retakes into a new sequence"], "c": ["#ff6aa0", "#c43a72"]}, "ripple": {"n": ["قطرة مية", "Water drop"], "d": ["موج ميّة من أي نقطة تختارها في الفريم", "Water ripples from any point you pick in the frame"], "c": ["#7fd8ff", "#2f7fd0"]}, "track": {"n": ["تراكينج", "Tracking"], "d": ["حاجة بتمشي ورا جسم في الفيديو", "Something that follows a moving object in the video"], "c": ["#9b7bff", "#6b4be0"]}, "zoom": {"n": ["زووم تلقائي", "Auto zoom"], "d": ["زووم تلقائي على الكلام", "Automatic zooms on the speech"], "c": ["#36d6b3", "#1a9e86"]}, "curves": {"n": ["كيفريمز", "Keyframe curves"], "d": ["منحنيات حركة جاهزة", "Ready motion curves for your keyframes"], "c": ["#ffc14d", "#e8961c"]}, "ramp": {"n": ["سبيد رامب", "Speed ramp"], "d": ["تسريع وتبطيء ناعم", "Smooth speed-up and slow-down"], "c": ["#ff8a3d", "#e85a1c"]}, "trans": {"n": ["انتقالات وغبار", "Transitions & dust"], "d": ["ترانزيشن بين لقطتين + غبار وموجة مية", "Transitions between shots, plus dust and water"], "c": ["#5aa2ff", "#2f6ae0"]}, "carousel": {"n": ["كاروسيل 3D", "3D carousel"], "d": ["كاروسيل للصور والفيديو بحركة 3D", "A 3D ring of your photos and videos"], "c": ["#7b5cff", "#4f3bd9"]}, "text": {"n": ["نص متحرك", "Animated text"], "d": ["نصوص بستايلات جاهزة وحركة", "Text with ready styles and motion"], "c": ["#5aa2ff", "#2f6ae0"]}, "fx": {"n": ["مؤثرات النص", "Text effects"], "d": ["حركات دخول وخروج للنص", "In and out animations for any text"], "c": ["#ff8a3d", "#e85a1c"]}, "path": {"n": ["نص على خط", "Text on path"], "d": ["نص ماشي على مسار بترسمه", "Text running along a path you draw"], "c": ["#ff6aa0", "#d63d77"]}, "glass": {"n": ["Liquid Glass", "Liquid Glass"], "d": ["أشكال زجاج شفافة", "Clear liquid-glass shapes and cards"], "c": ["#7fd8ff", "#3aa5d6"]}, "icons": {"n": ["أيقونات 3D", "3D icons"], "d": ["آلاف الأيقونات بشكل 3D", "Thousands of icons in 3D"], "c": ["#ffc14d", "#e8961c"]}, "obj3d": {"n": ["مجسمات 3D", "3D objects"], "d": ["عربيات، طيارات، سفن، حيوانات، أكل، طبي، تقني، خرايط و GLB", "Cars, planes, animals, medical, tech, maps and GLB"], "c": ["#36d6b3", "#1a9e86"]}, "social": {"n": ["سوشيال", "Social"], "d": ["اشترك، لايك، كومنت، إشعار، متابعة", "Subscribe, like, comment, notification, follow"], "c": ["#ff4f6b", "#d1284a"]}, "lower": {"n": ["لوار ثيرد", "Lower third"], "d": ["اسم ووظيفة تحت المتكلم", "Name and title under the speaker"], "c": ["#9b7bff", "#6b4be0"]}, "backgrounds": {"n": ["خلفيات متحركة", "Backgrounds"], "d": ["خلفيات متحركة جاهزة", "Ready animated backgrounds"], "c": ["#4fd18b", "#23a061"]}, "lines": {"n": ["خطوط متحركة", "Animated lines"], "d": ["خطوط وأسهم بترسم نفسها", "Lines and arrows that draw themselves"], "c": ["#ffd34d", "#d8a51c"]}, "insert": {"n": ["إنسيرت", "Inserts"], "d": ["صور متثبتة بدبوس، إطارات، فيديو في دايرة", "Pinned photos, frames, video in a circle"], "c": ["#ff9f5a", "#e0702d"]}, "counter": {"n": ["عدّاد أرقام", "Counter"], "d": ["رقم بيعدّ من رقم لرقم", "A number that counts from one value to another"], "c": ["#e5b74a", "#b9861a"]}, "scenes": {"n": ["مشاهد جاهزة", "Ready scenes"], "d": ["39 مشهد موشن كامل جاهز", "39 complete motion scenes"], "c": ["#ff7a59", "#d6286b"]}, "styles": {"n": ["ستايلات كلام", "Text styles"], "d": ["ستايلات أغاني وريلز بتدخل كلمة كلمة", "Song and reel styles, word by word"], "c": ["#82b1e3", "#4c7fc0"]}, "retouch": {"n": ["ري تاتش", "Retouch"], "d": ["تنعيم بشرة، إضاءة، عيون وشفايف، وفلاتر", "Skin smoothing, light, eyes, lips and filters"], "c": ["#ff9ec4", "#d1497f"]}, "filters": {"n": ["فلاتر وألوان", "Filters & color"], "d": ["فلاتر سينمائية و LUT", "Cinematic filters and LUTs"], "c": ["#ff6aa0", "#c43a72"]}, "clean": {"n": ["عزل الصوت", "Voice isolation"], "d": ["بيشيل الدوشة ويسيب الصوت نضيف (RNN)", "Removes the noise and keeps the voice"], "c": ["#5aa2ff", "#2f6ae0"]}, "caption": {"n": ["كابشن تلقائي", "Auto captions"], "d": ["كابشن تلقائي عربي وإنجليزي", "Automatic Arabic and English captions"], "c": ["#ffc14d", "#e8961c"]}, "sfx": {"n": ["ساوند إفكتس", "Sound effects"], "d": ["مكتبة إفكتات صوت من فولدراتك", "A sound-effects library from your folders"], "c": ["#4fd18b", "#23a061"]}, "viz": {"n": ["موجات صوت", "Audio waves"], "d": ["أعمدة وموجات بترقص على الصوت", "Bars and waves dancing to the audio"], "c": ["#7b5cff", "#4f3bd9"]}, "mogrts": {"n": ["موجرتس", "MOGRTs"], "d": ["قوالب جلاس وغيرها تتعدّل من Essential Graphics", "Glass and text templates editable in Essential Graphics"], "c": ["#9fd3ff", "#5b8fd6"]}, "agent": {"n": ["مساعد ENP", "ENP assistant"], "d": ["قولّه «اعمل فيرست كت» أو «لوّن سينمائي» وهو ينفّذ", "Say «make a first cut» and it does it"], "c": ["#82b1e3", "#b0485e"]}, "items": {"n": ["عناصر بريمير", "Premiere items"], "d": ["Adjustment، Solid، سكرين شوت", "Adjustment, Solid, screenshot in one click"], "c": ["#36d6b3", "#1a9e86"]}, "download": {"n": ["تحميل من النت", "Web downloads"], "d": ["فيديو أو جزء منه من أي موقع", "A video or part of it from any site"], "c": ["#ff4f6b", "#d1284a"]}, "organize": {"n": ["تنظيم المشروع", "Organize project"], "d": ["يرتّب البروجكت في فولدرات", "Puts the project into tidy bins"], "c": ["#ffc14d", "#e8961c"]}, "safe": {"n": ["المنطقة الآمنة", "Safe zone"], "d": ["حدود تيك توك وريلز ويوتيوب", "TikTok, Reels and YouTube safe areas"], "c": ["#9b7bff", "#6b4be0"]}, "support": {"n": ["الدعم", "Help"], "d": ["اسأل عن أي مشكلة وخد الحل", "Ask about any problem and get the fix"], "c": ["#82b1e3", "#4f7fc0"]}};
+  function clp(v, a, b) { return v < a ? a : v > b ? b : v; }
+  function E(p) { p = clp(p, 0, 1); return 1 - Math.pow(1 - p, 3); }
+  function EIO(p) { p = clp(p, 0, 1); return p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; }
+  function SP(p) { p = clp(p, 0, 1); return 1 - Math.exp(-6 * p) * Math.cos(9 * p); }
+  function H2(i) { var s = Math.sin(i * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); }
+  function rrect(x, a, b, w, h, r) { x.beginPath(); x.moveTo(a + r, b); x.arcTo(a + w, b, a + w, b + h, r); x.arcTo(a + w, b + h, a, b + h, r); x.arcTo(a, b + h, a, b, r); x.arcTo(a, b, a + w, b, r); x.closePath(); }
+  function tx(x, s, px, cx, cy, col, w, al) { x.font = (w || 800) + ' ' + Math.round(px) + 'px "Segoe UI","Noto Sans Arabic",Tahoma,sans-serif'; x.fillStyle = col; x.textAlign = al || 'center'; x.textBaseline = 'middle'; x.direction = /[؀-ۿ]/.test(s) ? 'rtl' : 'ltr'; x.fillText(s, cx, cy); }
+  /* «footage»: a calm cinematic shot (sky, sun, a figure) used under most demos */
+  function shot(x, W, H, t, hue) {
+    var g = x.createLinearGradient(0, 0, 0, H); g.addColorStop(0, 'hsl(' + (hue || 345) + ',45%,22%)'); g.addColorStop(.6, 'hsl(' + ((hue || 345) + 20) + ',55%,36%)'); g.addColorStop(1, '#0b0b0d'); x.fillStyle = g; x.fillRect(0, 0, W, H);
+    var sx = W * (.68 + Math.sin(t * .4) * .02), sy = H * .42, sg = x.createRadialGradient(sx, sy, 0, sx, sy, H * .55); sg.addColorStop(0, 'rgba(255,214,170,.85)'); sg.addColorStop(.25, 'rgba(255,140,120,.35)'); sg.addColorStop(1, 'rgba(255,120,120,0)'); x.fillStyle = sg; x.fillRect(0, 0, W, H);
+    x.fillStyle = 'rgba(8,6,8,.92)'; var px = W * .34, py = H * .62; x.beginPath(); x.arc(px, py - H * .17, H * .085, 0, 6.283); x.fill(); x.beginPath(); x.ellipse(px, py + H * .25, H * .22, H * .3, 0, Math.PI, 0); x.fill();
+    x.fillStyle = 'rgba(0,0,0,.35)'; x.fillRect(0, H * .86, W, H * .14);
+  }
+  function wave(x, W, H, t, y0, amp, n, col, noise) {
+    var bw = W / n; for (var i = 0; i < n; i++) { var v = Math.abs(Math.sin(i * .35 + t * 3) * Math.sin(i * .11 + 1.3)) * amp + (noise ? H2(i + Math.floor(t * 12)) * noise : 0); x.fillStyle = col; x.fillRect(i * bw + bw * .2, y0 - v, bw * .6, v * 2); }
+  }
+  var DEMO = {
+    cut: function (x, W, H, t) {
+      x.fillStyle = '#101014'; x.fillRect(0, 0, W, H); var p = EIO((t - .6) / 1.8), y = H * .45, n = 64, bw = W * .9 / n, x0 = W * .05, gaps = [[14, 20], [33, 37], [50, 56]];
+      var shift = 0; for (var i = 0; i < n; i++) {
+        var g = gaps.filter(function (q) { return i >= q[0] && i < q[1]; })[0], v = g ? 2 : Math.abs(Math.sin(i * .5) * Math.sin(i * .13 + 1)) * H * .22 + 3;
+        if (g) { x.globalAlpha = 1 - p; x.fillStyle = '#e0263f'; } else { x.globalAlpha = 1; x.fillStyle = '#d6d6de'; }
+        x.fillRect(x0 + i * bw - shift + bw * .15, y - v, bw * .7, v * 2); if (g) shift += bw * p;
+      }
+      x.globalAlpha = 1; tx(x, '− 12 ث سكتات', W * .045, W / 2, H * .82, '#e0869f', 700);
+    },
+    ripple: function (x, W, H, t) {
+      shot(x, W, H, t, 200); var cx = W * .55, cy = H * .55; x.save(); x.lineWidth = W * .006;
+      for (var r = 0; r < 6; r++) { var rad = ((t * .9 + r * .22) % 1.3) * W * .45, a = clp(1 - rad / (W * .45), 0, 1); x.strokeStyle = 'rgba(255,255,255,' + (a * .8) + ')'; x.beginPath(); x.ellipse(cx, cy, rad, rad * .45, 0, 0, 6.283); x.stroke(); }
+      x.restore(); if (t % 1.3 < .2) { x.fillStyle = 'rgba(255,255,255,.9)'; x.beginPath(); x.arc(cx, cy, W * .012, 0, 6.283); x.fill(); }
+    },
+    track: function (x, W, H, t) {
+      shot(x, W, H, t, 220); var u = (t / 4) % 1, ox = W * (.15 + .7 * u), oy = H * (.55 + Math.sin(u * 6.28) * .12);
+      x.fillStyle = '#ffd34d'; x.beginPath(); x.arc(ox, oy, W * .03, 0, 6.283); x.fill(); x.strokeStyle = '#ffd34d'; x.setLineDash([6, 4]); x.lineWidth = 2; x.strokeRect(ox - W * .06, oy - W * .06, W * .12, W * .12); x.setLineDash([]);
+      x.fillStyle = '#7A142C'; rrect(x, ox - W * .1, oy - W * .17, W * .2, W * .07, W * .02); x.fill(); tx(x, 'ENP', W * .04, ox, oy - W * .135, '#fff', 800);
+    },
+    zoom: function (x, W, H, t) {
+      var b = Math.floor(t / 1) % 2, s = 1 + (b ? .22 : 0) * E((t % 1) / .35); x.save(); x.translate(W / 2, H / 2); x.scale(s, s); x.translate(-W / 2, -H / 2); shot(x, W, H, t, 330); x.restore();
+      x.fillStyle = 'rgba(0,0,0,.45)'; x.fillRect(0, H * .82, W, H * .18); wave(x, W, H, t, H * .91, H * .05, 48, b ? '#e0263f' : 'rgba(255,255,255,.6)');
+    },
+    curves: function (x, W, H, t) {
+      x.fillStyle = '#101014'; x.fillRect(0, 0, W, H); var x0 = W * .12, y0 = H * .8, w = W * .76, h = H * .6; x.strokeStyle = 'rgba(255,255,255,.08)'; for (var i = 0; i <= 4; i++) { x.beginPath(); x.moveTo(x0, y0 - h * i / 4); x.lineTo(x0 + w, y0 - h * i / 4); x.stroke(); }
+      x.strokeStyle = '#e0869f'; x.lineWidth = 3; x.beginPath(); x.moveTo(x0, y0); x.bezierCurveTo(x0 + w * .7, y0, x0 + w * .3, y0 - h, x0 + w, y0 - h); x.stroke();
+      var u = (t % 2) / 2, e = EIO(u); x.fillStyle = '#fff'; x.beginPath(); x.arc(x0 + w * u, y0 - h * e, 6, 0, 6.283); x.fill();
+      x.fillStyle = '#7A142C'; rrect(x, x0 + w * e - 14, H * .9 - 14, 28, 28, 6); x.fill();
+    },
+    ramp: function (x, W, H, t) {
+      shot(x, W, H, t * 3, 20); var u = (t % 2) / 2, fast = u > .35 && u < .65; if (fast) { x.fillStyle = 'rgba(255,255,255,.12)'; for (var i = 0; i < 18; i++) x.fillRect(0, H2(i) * H, W, 2); }
+      x.fillStyle = 'rgba(0,0,0,.55)'; rrect(x, W * .05, H * .06, W * .26, H * .14, 10); x.fill(); tx(x, fast ? '400%' : '50%', W * .06, W * .18, H * .13, fast ? '#e0263f' : '#fff', 900);
+    },
+    trans: function (x, W, H, t) {
+      shot(x, W, H, t, 210); var p = clp((t % 3) / 2.2, 0, 1), c = Math.max(4, Math.round(W / 70));
+      for (var gy = 0; gy < H; gy += c) for (var gx = 0; gx < W; gx += c) { var ts = (gx / W) * .55 + H2(gx * 3 + gy) * .45, age = (p - ts * .7) / .3; if (age > 1) continue;
+        var hue = 345, px = gx + (age > 0 ? age * age * W * .3 : 0), py = gy - (age > 0 ? age * H * .15 : 0); x.fillStyle = 'hsla(' + (hue + gy / H * 20) + ',50%,' + (25 + gy / H * 15) + '%,' + (age > 0 ? 1 - age : 1) + ')'; x.fillRect(px, py, age > 0 ? c * .6 : c, age > 0 ? c * .6 : c); }
+    },
+    carousel: function (x, W, H, t) {
+      x.fillStyle = '#0d0d10'; x.fillRect(0, 0, W, H); var n = 7, cards = [];
+      for (var i = 0; i < n; i++) { var a = i / n * 6.283 + t * .8; cards.push({ a: a, z: Math.cos(a), i: i }); } cards.sort(function (p, q) { return p.z - q.z; });
+      cards.forEach(function (c) { var cx = W / 2 + Math.sin(c.a) * W * .33, s = .55 + .45 * (c.z + 1) / 2, cw = W * .2 * s, ch = H * .55 * s; x.globalAlpha = .45 + .55 * (c.z + 1) / 2;
+        var g = x.createLinearGradient(cx, H / 2 - ch / 2, cx, H / 2 + ch / 2); g.addColorStop(0, 'hsl(' + (340 + c.i * 25) + ',60%,55%)'); g.addColorStop(1, 'hsl(' + (360 + c.i * 25) + ',60%,25%)'); x.fillStyle = g; rrect(x, cx - cw / 2, H / 2 - ch / 2, cw, ch, 10 * s); x.fill(); }); x.globalAlpha = 1;
+    },
+    text: function (x, W, H, t) {
+      shot(x, W, H, t, 300); var ws = ['المونتاج', 'بقى', 'أسهل'], tot = 0; ws.forEach(function (w, i) { var p = SP((t % 3.2 - i * .25) / .5); if (p <= 0) return; x.save(); x.globalAlpha = clp(p, 0, 1); x.shadowColor = '#ffcf6b'; x.shadowBlur = 20; tx(x, w, W * .1 * (i === 1 ? .7 : 1), W / 2, H * (.3 + i * .2) + (1 - clp(p, 0, 1)) * 20, i === 2 ? '#ffcf6b' : '#fff', 900); x.restore(); }); void tot;
+    },
+    fx: function (x, W, H, t) {
+      x.fillStyle = '#101014'; x.fillRect(0, 0, W, H); var s = 'ENP STUDIO', fs = W * .1; x.font = '900 ' + fs + 'px "Segoe UI",sans-serif'; var tw0 = x.measureText(s).width, cx = W / 2 - tw0 / 2;
+      for (var i = 0; i < s.length; i++) { var p = SP(((t % 3) - i * .07) / .5), ch = s[i], w = x.measureText(ch).width; x.save(); x.globalAlpha = clp(p, 0, 1); x.translate(cx + w / 2, H / 2 - (1 - clp(p, 0, 1.2)) * H * .2); x.scale(clp(p, 0, 1.3), clp(p, 0, 1.3)); tx(x, ch, fs, 0, 0, i < 3 ? '#e0263f' : '#fff', 900); x.restore(); cx += w; }
+    },
+    path: function (x, W, H, t) {
+      x.fillStyle = '#101014'; x.fillRect(0, 0, W, H); x.strokeStyle = 'rgba(224,134,159,.4)'; x.lineWidth = 2; x.beginPath(); for (var u = 0; u <= 1; u += .01) { var px = W * u, py = H / 2 + Math.sin(u * 6.28) * H * .2; u ? x.lineTo(px, py) : x.moveTo(px, py); } x.stroke();
+      var s = 'النص ماشي على الخط'; for (var i = 0; i < s.length; i++) { var u2 = ((t * .12 + i * .035) % 1), px2 = W * u2, py2 = H / 2 + Math.sin(u2 * 6.28) * H * .2 - 16, ang = Math.atan(Math.cos(u2 * 6.28) * 6.28 * H * .2 / W); x.save(); x.translate(px2, py2); x.rotate(ang); tx(x, s[s.length - 1 - i], W * .05, 0, 0, '#fff', 800); x.restore(); }
+    },
+    glass: function (x, W, H, t) {
+      shot(x, W, H, t, 280); var gw = W * .5, gh = H * .22, gx = W / 2 - gw / 2 + Math.sin(t) * W * .05, gy = H * .4;
+      x.save(); rrect(x, gx, gy, gw, gh, gh / 2); x.clip(); x.filter = 'blur(10px)'; x.drawImage(x.canvas, 0, 0); x.filter = 'none'; x.fillStyle = 'rgba(255,255,255,.14)'; x.fillRect(gx, gy, gw, gh); x.restore();
+      x.strokeStyle = 'rgba(255,255,255,.55)'; x.lineWidth = 1.5; rrect(x, gx, gy, gw, gh, gh / 2); x.stroke(); tx(x, 'Liquid Glass', gh * .38, gx + gw / 2, gy + gh / 2, '#fff', 800);
+    },
+    icons: function (x, W, H, t) {
+      x.fillStyle = '#101014'; x.fillRect(0, 0, W, H); var s = H * .18, sx = Math.cos(t * 1.5); x.save(); x.translate(W / 2, H / 2); x.scale(Math.max(.15, Math.abs(sx)), 1); x.shadowColor = '#e0263f'; x.shadowBlur = 30;
+      for (var d = 6; d >= 0; d--) { x.fillStyle = d ? 'rgba(122,20,44,' + (.5 - d * .05) + ')' : (sx > 0 ? '#ff4d6d' : '#c21f3f'); x.beginPath(); x.moveTo(0, s * .9 + d); x.bezierCurveTo(-s * 1.4, -s * .1 + d, -s * .7, -s * 1.1 + d, 0, -s * .4 + d); x.bezierCurveTo(s * .7, -s * 1.1 + d, s * 1.4, -s * .1 + d, 0, s * .9 + d); x.fill(); } x.restore();
+    },
+    obj3d: function (x, W, H, t) {
+      x.fillStyle = '#05070c'; x.fillRect(0, 0, W, H); var R = H * .32, cx = W / 2, cy = H / 2; x.strokeStyle = 'rgba(127,227,255,.75)'; x.lineWidth = 1.2; x.shadowColor = '#7fe3ff'; x.shadowBlur = 10;
+      for (var la = -60; la <= 60; la += 30) { var rr2 = R * Math.cos(la * Math.PI / 180); x.beginPath(); x.ellipse(cx, cy - R * Math.sin(la * Math.PI / 180), rr2, rr2 * .25, 0, 0, 6.283); x.stroke(); }
+      for (var lo = 0; lo < 180; lo += 30) { var a = lo * Math.PI / 180 + t * .7; x.beginPath(); x.ellipse(cx, cy, Math.abs(Math.cos(a)) * R, R, 0, 0, 6.283); x.stroke(); } x.shadowBlur = 0;
+    },
+    social: function (x, W, H, t) {
+      shot(x, W, H, t, 0); var u = t % 3, pr = u > 1 && u < 1.25, done = u > 1.15, bw = W * .4, bh = H * .16, bx = W / 2 - bw / 2, by = H * .62, s = pr ? .92 : 1;
+      x.save(); x.translate(W / 2, by + bh / 2); x.scale(s, s); x.translate(-W / 2, -by - bh / 2); x.fillStyle = done ? '#3a3a40' : '#e0263f'; rrect(x, bx, by, bw, bh, bh / 2); x.fill(); tx(x, done ? '✓ مشترك' : 'اشترك', bh * .42, W / 2, by + bh / 2, '#fff', 800); x.restore();
+      if (done) { var r = Math.sin((u - 1.15) * 20) * .3 * Math.max(0, 1 - (u - 1.15)); x.save(); x.translate(bx + bw + bh * .7, by + bh / 2); x.rotate(r); tx(x, '🔔', bh * .6, 0, 0, '#fff', 400); x.restore(); }
+      var cx = W * .5 + (u < 1 ? (1 - E(u)) * W * .3 : 0), cy = by + bh * .7; x.fillStyle = '#fff'; x.beginPath(); x.moveTo(cx, cy); x.lineTo(cx + 10, cy + 22); x.lineTo(cx + 16, cy + 14); x.lineTo(cx + 26, cy + 14); x.closePath(); x.fill();
+    },
+    lower: function (x, W, H, t) {
+      shot(x, W, H, t, 250); var p = E(((t % 3.5) - .3) / .6), w = W * .48 * p, y = H * .7; x.fillStyle = '#7A142C'; x.fillRect(W * .93 - w, y, w, H * .1); x.fillStyle = 'rgba(14,14,18,.85)'; x.fillRect(W * .93 - w * .8, y + H * .1, w * .8, H * .07);
+      if (p > .6) { x.globalAlpha = (p - .6) / .4; tx(x, 'عمار — مونتير', H * .055, W * .93 - 14, y + H * .05, '#fff', 800, 'right'); tx(x, 'ENP Studio', H * .04, W * .93 - 14, y + H * .135, '#c9c9d1', 600, 'right'); x.globalAlpha = 1; }
+    },
+    backgrounds: function (x, W, H, t) {
+      x.fillStyle = '#0b0b0d'; x.fillRect(0, 0, W, H); x.lineWidth = 1.5; for (var r = 0; r < 14; r++) { x.strokeStyle = 'rgba(224,38,63,' + (.15 + r / 30) + ')'; x.beginPath(); for (var i = 0; i <= 40; i++) { var px = W * i / 40, py = H * (r + .5) / 14 + Math.sin(i * .4 + t * 1.6 + r * .5) * H * .04; i ? x.lineTo(px, py) : x.moveTo(px, py); } x.stroke(); }
+    },
+    lines: function (x, W, H, t) {
+      shot(x, W, H, t, 190); var p = E((t % 3) / 1.4); x.strokeStyle = '#fff'; x.lineWidth = 5; x.lineCap = 'round'; x.shadowColor = '#fff'; x.shadowBlur = 12; x.beginPath(); var n = Math.floor(60 * p), px = 0, py = 0;
+      for (var i = 0; i <= n; i++) { var u = i / 60; px = W * (.15 + .6 * u); py = H * (.75 - .45 * u) + Math.sin(u * 5) * H * .06; i ? x.lineTo(px, py) : x.moveTo(px, py); } x.stroke();
+      if (p > .98) { x.beginPath(); x.moveTo(px, py); x.lineTo(px - 22, py + 2); x.moveTo(px, py); x.lineTo(px - 6, py + 22); x.stroke(); } x.shadowBlur = 0;
+    },
+    insert: function (x, W, H, t) {
+      x.fillStyle = '#efe9e0'; x.fillRect(0, 0, W, H); tx(x, 'الفكرة هي أهم حاجة', W * .075, W / 2, H / 2, '#222', 800); var p = E((t % 3) / 1.2);
+      x.strokeStyle = '#e0263f'; x.lineWidth = 4; x.beginPath(); for (var i = 0; i <= 60 * p; i++) { var a = i / 60 * 6.6 - .4, px = W * .64 + Math.cos(a) * W * .14, py = H / 2 + Math.sin(a) * H * .14; i ? x.lineTo(px, py) : x.moveTo(px, py); } x.stroke();
+    },
+    counter: function (x, W, H, t) {
+      x.fillStyle = '#101014'; x.fillRect(0, 0, W, H); var p = E((t % 3.2) / 2), v = Math.round(947 * p); x.lineWidth = 10; x.strokeStyle = 'rgba(255,255,255,.08)'; x.beginPath(); x.arc(W / 2, H / 2, H * .3, 0, 6.283); x.stroke();
+      x.strokeStyle = '#e0263f'; x.lineCap = 'round'; x.beginPath(); x.arc(W / 2, H / 2, H * .3, -1.57, -1.57 + 6.283 * p); x.stroke(); tx(x, String(v), H * .18, W / 2, H / 2, '#ffcf6b', 900);
+    },
+    scenes: function (x, W, H, t) {
+      x.fillStyle = '#070606'; x.fillRect(0, 0, W, H); var p = E((t % 3.4) / .8), g = x.createRadialGradient(W / 2, H * .5, 0, W / 2, H * .5, H * .7); g.addColorStop(0, 'rgba(224,38,63,' + (.55 * p) + ')'); g.addColorStop(1, 'rgba(224,38,63,0)'); x.fillStyle = g; x.fillRect(0, 0, W, H);
+      x.save(); x.translate(W / 2, H * .46); var sc = 1.5 - .5 * SP((t % 3.4) / .7); x.scale(sc, sc); x.shadowColor = '#e0263f'; x.shadowBlur = 30; tx(x, 'لا', H * .38, 0, 0, '#e0263f', 900); x.restore(); if (t % 3.4 > 1) tx(x, '39 مشهد جاهز', H * .08, W / 2, H * .82, '#fff', 700);
+    },
+    styles: function (x, W, H, t) {
+      x.fillStyle = '#0c0c0f'; x.fillRect(0, 0, W, H); var u = t % 3.4; [['الفكرة', .3, .7, '#fff'], ['مش', .48, 1, '#e0869f'], ['في الأداة', .66, .8, '#fff']].forEach(function (w, i) { var p = SP((u - i * .3) / .5); if (p <= 0) return; x.save(); x.globalAlpha = clp(p, 0, 1); x.translate(W / 2, H * w[1]); x.scale(clp(p, 0, 1.2), clp(p, 0, 1.2)); tx(x, w[0], H * .14 * w[2], 0, 0, w[3], 900); x.restore(); });
+    },
+    retouch: function (x, W, H, t) {
+      x.fillStyle = '#1a1014'; x.fillRect(0, 0, W, H); var cx = W / 2, cy = H * .52, r = H * .3, sw = W * (.5 + Math.sin(t * 1.2) * .3), g = x.createRadialGradient(cx - r * .3, cy - r * .4, r * .1, cx, cy, r * 1.1); g.addColorStop(0, '#ffe0cf'); g.addColorStop(.6, '#e2a184'); g.addColorStop(1, '#7a4434');
+      x.fillStyle = '#1f1216'; x.beginPath(); x.ellipse(cx, cy - r * .1, r * 1.1, r * 1.2, 0, 0, 6.283); x.fill(); x.fillStyle = g; x.beginPath(); x.ellipse(cx, cy + r * .05, r * .78, r * .95, 0, 0, 6.283); x.fill();
+      x.fillStyle = '#1f1216'; x.beginPath(); x.ellipse(cx + r * .1, cy - r * .7, r * .85, r * .38, -.2, 0, 6.283); x.fill(); x.fillStyle = 'rgba(40,20,20,.8)'; [-1, 1].forEach(function (s) { x.beginPath(); x.ellipse(cx + s * r * .3, cy - r * .05, r * .09, r * .05, 0, 0, 6.283); x.fill(); });
+      x.save(); x.beginPath(); x.rect(0, 0, sw, H); x.clip(); x.fillStyle = 'rgba(110,40,35,.55)'; for (var i = 0; i < 40; i++) { x.beginPath(); x.arc(cx + (H2(i) - .5) * r * 1.3, cy + (H2(i + 9) - .5) * r * 1.5, 2 + H2(i + 3) * 3, 0, 6.283); x.fill(); } x.fillStyle = 'rgba(0,0,0,.25)'; x.fillRect(0, 0, sw, H); x.restore();
+      x.fillStyle = '#fff'; x.fillRect(sw - 1, 0, 2, H);
+    },
+    filters: function (x, W, H, t) {
+      shot(x, W, H, t, 345); var sw = W * (.5 + Math.sin(t * 1.1) * .35); x.save(); x.beginPath(); x.rect(sw, 0, W - sw, H); x.clip(); x.globalCompositeOperation = 'color'; x.fillStyle = '#2a6f8a'; x.fillRect(0, 0, W, H); x.globalCompositeOperation = 'overlay'; x.fillStyle = 'rgba(255,160,90,.35)'; x.fillRect(0, 0, W, H); x.restore();
+      x.fillStyle = '#fff'; x.fillRect(sw - 1, 0, 2, H); tx(x, 'Teal & Orange', H * .06, W * .97, H * .08, '#fff', 700, 'right');
+    },
+    clean: function (x, W, H, t) {
+      x.fillStyle = '#0c0c0f'; x.fillRect(0, 0, W, H); var noisy = (t % 4) < 2; wave(x, W, H, t, H / 2, H * .25, 70, noisy ? 'rgba(160,160,170,.7)' : '#e0546f', noisy ? H * .09 : 0);
+      tx(x, noisy ? 'قبل: دوشة' : 'بعد: RNN', H * .07, W / 2, H * .88, noisy ? '#9a9aa3' : '#e0869f', 700);
+    },
+    caption: function (x, W, H, t) {
+      shot(x, W, H, t, 160); var ws = ['أهلًا', 'بيكم', 'في', 'ENP'], i0 = Math.floor((t % 4) / 1) % 4, fs = H * .085, tot = 0; x.font = '800 ' + fs + 'px "Segoe UI",sans-serif'; ws.forEach(function (w) { tot += x.measureText(w + ' ').width; });
+      var px = W / 2 + tot / 2; ws.forEach(function (w, i) { var ww = x.measureText(w + ' ').width; if (i === i0) { x.fillStyle = '#e0263f'; rrect(x, px - ww, H * .8 - fs * .65, ww - fs * .2, fs * 1.3, 6); x.fill(); } tx(x, w, fs, px - ww / 2 - fs * .1, H * .8, '#fff', 800); px -= ww; });
+    },
+    sfx: function (x, W, H, t) {
+      x.fillStyle = '#0c0c0f'; x.fillRect(0, 0, W, H); ['Whoosh', 'Pop', 'Click', 'Riser'].forEach(function (s, i) { var u = ((t + i * .7) % 2.8) / 2.8, a = 1 - u; x.strokeStyle = 'rgba(224,38,63,' + a + ')'; x.lineWidth = 2; x.beginPath(); x.arc(W * (.2 + i * .2), H * .45, u * H * .25, 0, 6.283); x.stroke(); tx(x, s, H * .06, W * (.2 + i * .2), H * .78, '#d6d6de', 700); });
+    },
+    viz: function (x, W, H, t) {
+      x.fillStyle = '#0c0c0f'; x.fillRect(0, 0, W, H); var n = 32, bw = W * .8 / n; for (var i = 0; i < n; i++) { var v = (Math.abs(Math.sin(i * .6 + t * 4)) * .6 + Math.abs(Math.sin(i * .21 - t * 2.3)) * .4) * H * .55; var g = x.createLinearGradient(0, H * .8 - v, 0, H * .8); g.addColorStop(0, '#ff6b81'); g.addColorStop(1, '#7A142C'); x.fillStyle = g; rrect(x, W * .1 + i * bw + 2, H * .8 - v, bw - 4, v, 3); x.fill(); }
+    },
+    mogrts: function (x, W, H, t) {
+      shot(x, W, H, t, 290); var px = W * .62, pw = W * .34; x.fillStyle = 'rgba(16,16,20,.92)'; rrect(x, px, H * .1, pw, H * .8, 10); x.fill(); tx(x, 'Essential Graphics', H * .045, px + pw - 10, H * .17, '#9a9aa3', 600, 'right');
+      var full = 'كبسولة جلاس', n = Math.floor(clp((t % 4) / 1.6, 0, 1) * full.length); x.strokeStyle = 'rgba(255,255,255,.25)'; rrect(x, px + 10, H * .25, pw - 20, H * .1, 6); x.stroke(); tx(x, full.slice(0, n) + (Math.floor(t * 2) % 2 ? '|' : ''), H * .05, px + pw - 20, H * .3, '#fff', 600, 'right');
+      x.fillStyle = 'rgba(255,255,255,.15)'; rrect(x, W * .08, H * .42, W * .46, H * .18, H * .09); x.fill(); tx(x, full.slice(0, n), H * .06, W * .31, H * .51, '#fff', 800);
+    },
+    agent: function (x, W, H, t) {
+      x.fillStyle = '#0c0c0f'; x.fillRect(0, 0, W, H); var full = 'اعمل فيرست كت', n = Math.floor(clp((t % 4.5) / 1.2, 0, 1) * full.length); x.strokeStyle = '#7A142C'; x.lineWidth = 2; rrect(x, W * .1, H * .15, W * .8, H * .18, 12); x.stroke();
+      tx(x, full.slice(0, n), H * .07, W * .86, H * .24, '#fff', 700, 'right'); ['بقرا الصوت…', 'بشيل السكتات', 'سيكوينس جديد ✓'].forEach(function (s, i) { var p = (t % 4.5) - 1.5 - i * .6; if (p < 0) return; x.globalAlpha = clp(p / .3, 0, 1); tx(x, s, H * .06, W * .86, H * (.48 + i * .14), i === 2 ? '#4fd18b' : '#c9c9d1', 600, 'right'); x.globalAlpha = 1; });
+    },
+    items: function (x, W, H, t) {
+      x.fillStyle = '#0c0c0f'; x.fillRect(0, 0, W, H); for (var r = 0; r < 3; r++) { x.fillStyle = 'rgba(255,255,255,.04)'; x.fillRect(W * .06, H * (.3 + r * .2), W * .88, H * .16); }
+      [['Adjustment', '#9b7bff'], ['Solid', '#e0263f'], ['Screenshot', '#36d6b3']].forEach(function (c, i) { var p = E(((t % 3.6) - i * .4) / .5); if (p <= 0) return; x.fillStyle = c[1]; rrect(x, W * (.12 + i * .22), H * (.3 + i * .2) - (1 - p) * H * .3, W * .3, H * .16, 6); x.fill(); x.globalAlpha = p; tx(x, c[0], H * .055, W * (.27 + i * .22), H * (.38 + i * .2) - (1 - p) * H * .3, '#fff', 700); x.globalAlpha = 1; });
+    },
+    download: function (x, W, H, t) {
+      x.fillStyle = '#0c0c0f'; x.fillRect(0, 0, W, H); x.fillStyle = 'rgba(255,255,255,.06)'; rrect(x, W * .08, H * .2, W * .84, H * .14, 10); x.fill(); tx(x, 'https://…/video', H * .055, W * .12, H * .27, '#9a9aa3', 500, 'left');
+      var p = clp((t % 4) / 2.6, 0, 1); x.fillStyle = 'rgba(255,255,255,.08)'; rrect(x, W * .08, H * .5, W * .84, H * .05, H * .025); x.fill(); x.fillStyle = '#e0263f'; rrect(x, W * .08, H * .5, W * .84 * p, H * .05, H * .025); x.fill();
+      tx(x, p < 1 ? Math.round(p * 100) + '%' : 'على التايملاين ✓', H * .065, W / 2, H * .72, p < 1 ? '#fff' : '#4fd18b', 800);
+    },
+    organize: function (x, W, H, t) {
+      x.fillStyle = '#0c0c0f'; x.fillRect(0, 0, W, H); var bins = ['Video', 'Audio', 'Images', 'Seq']; bins.forEach(function (b, i) { x.fillStyle = 'rgba(255,255,255,.07)'; rrect(x, W * (.06 + i * .235), H * .62, W * .2, H * .26, 8); x.fill(); tx(x, b, H * .05, W * (.16 + i * .235), H * .82, '#c9c9d1', 700); });
+      for (var k = 0; k < 8; k++) { var p = E(((t % 3.6) - k * .15) / .6), bi = k % 4, sx = W * H2(k), sy = H * .1, ex = W * (.16 + bi * .235), ey = H * .7; x.fillStyle = ['#5aa2ff', '#36d6b3', '#ffc14d', '#e0263f'][bi]; rrect(x, sx + (ex - sx) * p - 10, sy + (ey - sy) * p - 8, 20, 16, 3); x.fill(); }
+    },
+    safe: function (x, W, H, t) {
+      x.fillStyle = '#0c0c0f'; x.fillRect(0, 0, W, H); var ph = H * .86, pw = ph * 9 / 16, px = W / 2 - pw / 2, py = H * .07; shot(x, W, H, t, 330); x.fillStyle = 'rgba(0,0,0,.6)'; x.fillRect(0, 0, px, H); x.fillRect(px + pw, 0, W, H);
+      x.strokeStyle = '#4fd18b'; x.setLineDash([5, 4]); x.strokeRect(px + pw * .08, py + ph * .12, pw * .74, ph * .62); x.setLineDash([]); x.fillStyle = 'rgba(224,38,63,.35)'; x.fillRect(px + pw * .84, py + ph * .35, pw * .16, ph * .5); x.fillRect(px, py + ph * .8, pw, ph * .2);
+    },
+    support: function (x, W, H, t) {
+      x.fillStyle = '#0c0c0f'; x.fillRect(0, 0, W, H); var u = t % 4.4; [['الكابشن بطيء أعمل إيه؟', .78, '#3a3a42', .2], ['دوس «فحص جهازي» وغيّر المحرك لـ GPU ✓', .22, '#7A142C', 1.2]].forEach(function (m, i) { var p = E((u - m[3]) / .4); if (p <= 0) return; x.globalAlpha = p; var w = W * .62, bx = i ? W * .06 : W * .32; x.fillStyle = m[2]; rrect(x, bx, H * (.2 + i * .32), w, H * .2, 14); x.fill(); tx(x, m[0], H * .05, bx + w - 14, H * (.3 + i * .32), '#fff', 600, 'right'); x.globalAlpha = 1; });
+    }
+  };
+  (function () {
+    var mon = D.getElementById('monCv'); if (!mon) return;
+    var nameEl = D.getElementById('monName'), descEl = D.getElementById('monDesc'), tcEl2 = D.getElementById('monTc'), chips = [].slice.call(D.querySelectorAll('.chip[data-t]')), ids = chips.map(function (c) { return c.getAttribute('data-t'); });
+    var cur = ids[0], t0 = performance.now(), hold = 0, idx = 0, vis = false;
+    function pick(id, user) { cur = id; t0 = performance.now(); if (user) hold = performance.now() + 14000; chips.forEach(function (c) { c.classList.toggle('on', c.getAttribute('data-t') === id); });
+      var info = TI[id] || {}; nameEl.textContent = info.n ? info.n[en ? 1 : 0] : id; descEl.textContent = info.d ? info.d[en ? 1 : 0] : ''; }
+    chips.forEach(function (c) { var id = c.getAttribute('data-t'); c.addEventListener('mouseenter', function () { pick(id, true); }); c.addEventListener('click', function () { pick(id, true); if (innerWidth < 980) mon.scrollIntoView({ behavior: 'smooth', block: 'center' }); }); });
+    W.__monLang = function () { pick(cur, false); };
+    new IntersectionObserver(function (es) { vis = es[0].isIntersecting; }, { threshold: .05 }).observe(mon);
+    function size() { var r = mon.getBoundingClientRect(), k = Math.min(2, devicePixelRatio || 1); mon.width = Math.round(r.width * k); mon.height = Math.round(r.width * 9 / 16 * k); }
+    size(); addEventListener('resize', size); pick(cur, false);
+    (function loop(now) {
+      requestAnimationFrame(loop); if (!vis) return;
+      var t = (now - t0) / 1000;
+      if (now > hold && t > 4.2) { idx = (ids.indexOf(cur) + 1) % ids.length; pick(ids[idx], false); t = 0; }
+      var x = mon.getContext('2d'), Wd = mon.width, Hd = mon.height; x.save(); x.setTransform(1, 0, 0, 1, 0, 0); x.clearRect(0, 0, Wd, Hd);
+      try { (DEMO[cur] || DEMO.text)(x, Wd, Hd, RM ? 1.5 : t); } catch (e) {} x.restore();
+      tcEl2.textContent = '00:00:0' + Math.floor(t % 10) + ':' + ('0' + Math.floor((t % 1) * 24)).slice(-2);
+    })(performance.now());
+  })();
+
+  /* ================= scroll scene: everything lands on the timeline ================= */
+  (function () {
+    var sec = D.getElementById('tl'), cv = D.getElementById('tlCv'), steps = [].slice.call(D.querySelectorAll('#tl .lsteps li')); if (!sec || !cv) return;
+    var TR = [['V3', '#e0869f', 'كابشن', .55, .95], ['V2', '#7fd8ff', 'Liquid Glass', .35, .9], ['V1', '#9b7bff', 'فيديو', .05, 1], ['A1', '#36d6b3', 'صوت نضيف', .15, 1], ['A2', '#ffc14d', 'SFX', .7, .78]];
+    function draw(q) {
+      var r = cv.getBoundingClientRect(), k = Math.min(2, devicePixelRatio || 1), Wd = Math.round(r.width * k), Hd = Math.round(r.height * k); if (cv.width !== Wd || cv.height !== Hd) { cv.width = Wd; cv.height = Hd; }
+      var x = cv.getContext('2d'), s = Wd / 900; x.clearRect(0, 0, Wd, Hd);
+      /* program monitor */
+      var mw = Math.min(Wd * .78, Hd * .55 * 16 / 9), mh = mw * 9 / 16, mx = (Wd - mw) / 2, my = 8 * s;
+      x.fillStyle = '#000'; rrect(x, mx, my, mw, mh, 12 * s); x.fill(); x.save(); rrect(x, mx, my, mw, mh, 12 * s); x.clip(); x.translate(mx, my);
+      var a1 = E((q - .05) / .15), a2 = E((q - .35) / .15), a3 = E((q - .55) / .15), ph = q;
+      if (a1 > 0) { x.globalAlpha = a1; shot(x, mw, mh, ph * 6, 345); x.globalAlpha = 1; }
+      if (a2 > 0) { var gw = mw * .46 * a2, gh = mh * .2; x.fillStyle = 'rgba(255,255,255,.16)'; rrect(x, mw / 2 - gw / 2, mh * .2, gw, gh, gh / 2); x.fill(); x.strokeStyle = 'rgba(255,255,255,.5)'; x.stroke(); if (a2 > .7) tx(x, 'ENP Studio', gh * .4, mw / 2, mh * .2 + gh / 2, '#fff', 800); }
+      if (a3 > 0) { x.globalAlpha = a3; var fs = mh * .08; x.fillStyle = '#e0263f'; rrect(x, mw / 2 - fs * 2.6, mh * .78 - fs * .65, fs * 2.4, fs * 1.3, 6); x.fill(); tx(x, 'كل حاجة', fs, mw / 2 + fs * 1.2, mh * .78, '#fff', 800); tx(x, 'هنا', fs, mw / 2 - fs * 1.4, mh * .78, '#fff', 800); x.globalAlpha = 1; }
+      x.restore(); x.strokeStyle = 'rgba(255,255,255,.1)'; rrect(x, mx, my, mw, mh, 12 * s); x.stroke();
+      /* timeline */
+      var ty = my + mh + 24 * s, th = Math.min(46 * s, (Hd - ty - 10 * s) / 5.4), lx = 70 * s, lw = Wd - lx - 16 * s;
+      TR.forEach(function (tr, i) {
+        var y = ty + i * (th + 6 * s); x.fillStyle = 'rgba(255,255,255,.035)'; rrect(x, lx, y, lw, th, 6 * s); x.fill(); tx(x, tr[0], 15 * s, lx - 36 * s, y + th / 2, '#8A8A93', 700);
+        var start = i === 2 ? .05 : i === 3 ? .15 : i === 1 ? .35 : i === 0 ? .55 : .7, p = E((q - start) / .14); if (p <= 0) return;
+        var cx0 = lx + lw * tr[3], cw = lw * (tr[4] - tr[3]), off = (1 - p) * lw * .6; x.globalAlpha = p; x.fillStyle = tr[1]; rrect(x, cx0 + off, y + 3 * s, cw, th - 6 * s, 5 * s); x.fill();
+        x.fillStyle = 'rgba(0,0,0,.35)'; if (i >= 3) for (var w = 0; w < cw - 10 * s; w += 6 * s) { var v = Math.abs(Math.sin((w / s) * .13 + i)) * (th * .35); x.fillRect(cx0 + off + 5 * s + w, y + th / 2 - v / 2, 3 * s, v); }
+        tx(x, tr[2], 14 * s, cx0 + off + cw - 10 * s, y + th / 2, '#0b0b0d', 800, 'right'); x.globalAlpha = 1;
+      });
+      var phx = lx + lw * clp(q, 0, 1); x.fillStyle = '#fff'; x.fillRect(phx - 1 * s, ty - 10 * s, 2 * s, 5 * (th + 6 * s) + 10 * s); x.beginPath(); x.moveTo(phx - 7 * s, ty - 12 * s); x.lineTo(phx + 7 * s, ty - 12 * s); x.lineTo(phx, ty - 2 * s); x.fill();
+      steps.forEach(function (li, i) { li.classList.toggle('on', q >= [.05, .35, .55, .7][i]); });
+    }
+    W.__scrollers = W.__scrollers || []; W.__scrollers.push({ el: sec, fn: draw });
+  })();
+
+  /* ================= scroll scene: a 3D ring of all the tools ================= */
+  (function () {
+    var sec = D.getElementById('ring'), ring = D.getElementById('ringIn'), num = D.getElementById('ringNum'); if (!sec || !ring) return;
+    var ids = Object.keys(TI), n = ids.length, tiles = [];
+    ids.forEach(function (id, i) { var d = D.createElement('div'); d.className = 'rt'; var c = TI[id].c || ['#7A142C', '#3a0d1a']; d.innerHTML = '<i style="background:linear-gradient(135deg,' + c[0] + ',' + c[1] + ')"></i><span></span>'; d.querySelector('span').textContent = TI[id].n[0]; d.__en = TI[id].n[1]; d.__ar = TI[id].n[0]; ring.appendChild(d); tiles.push(d); });
+    W.__ringLang = function () { tiles.forEach(function (d) { d.querySelector('span').textContent = en ? d.__en : d.__ar; }); };
+    function draw(q) {
+      var mob = innerWidth < 700, R = mob ? 300 : Math.min(innerWidth * .42, 520), rot = q * 300 - 40, tilt = (mob ? 26 : 18) - q * 10;
+      ring.style.transform = 'translateZ(' + (-R) + 'px) rotateX(' + tilt + 'deg) rotateY(' + rot + 'deg)';
+      tiles.forEach(function (d, i) { var a = i / n * 360, show = clp(q * 1.6 * n - i * .9, 0, 1); d.style.transform = 'rotateY(' + a + 'deg) translateZ(' + R + 'px) scale(' + (.6 + .4 * show) + ')'; d.style.opacity = show; });
+      num.textContent = String(Math.round(n * E(q / .7)));
+    }
+    W.__scrollers = W.__scrollers || []; W.__scrollers.push({ el: sec, fn: draw });
+  })();
 
   /* ---------- version from latest.json ---------- */
   fetch('latest.json?t=' + Date.now()).then(function (r) { return r.json(); }).then(function (j) { if (j.version) [].forEach.call(D.querySelectorAll('.eyebrow .mono'), function (e) { e.textContent = 'v' + j.version; }); }).catch(function () {});
