@@ -1,0 +1,14 @@
+{
+ "packs": [
+  {
+   "id": "emoji-extra-1",
+   "kind": "emoji",
+   "title": "إيموشنات إضافية",
+   "v": 1,
+   "file": "packs/emoji-extra-1.js",
+   "sha256": "c128add5a9af13e29e1e853f7048341c61cc9485b72fb35cd638bd11780aaec1",
+   "min": "2.9.13"
+  }
+ ],
+ "updated": "2026-11-21T14:22:56.627Z"
+}
