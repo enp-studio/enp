@@ -1,14 +1,14 @@
 {
- "version": "2.9.14",
- "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.9.14.zip",
- "sha256": "b9fe474b33c5f56c49694bf6c0649520add6c0eb9ec6686abcdaf012788c9db1",
- "notes": "قالب النص (MOGRT) بيتحرك زي المعاينة بالظبط ويتمد على القطع كلها · التلوين في بريمير زي المعاينة · After Effects اشتغل تاني · الأدوات بقت في شريط صغير · انتقالات على الكليب نفسه",
- "title": "ENP 2.9.14",
+ "version": "2.9.15",
+ "url": "https://raw.githubusercontent.com/enp-studio/enp/main/releases/ENP-2.9.15.zip",
+ "sha256": "0002ea9fe6fc76b5a70765b12e3feca3f77753cd9343d57616b0562b33f10d5a",
+ "notes": "واجهة إنجليزي كاملة، اختيار اللغة من أول مرة، أشكال سبيد رامب جديدة بالمنحنيات، وإضافات جديدة بتوصل من غير تحديث",
+ "title": "ENP 2.9.15",
  "force_after_days": 3,
  "news": {
-  "id": "u2914",
-  "title": "ENP 2.9.14 نزل",
-  "text": "النص بقى قالب MOGRT بيتحرك زي المعاينة بالظبط، After Effects اشتغل تمام، والأدوات مش واخدة نص الشاشة.",
+  "id": "u2915",
+  "title": "ENP 2.9.15 نزل",
+  "text": "الواجهة بقت إنجليزي كاملة، ENP بيسألك عن لغتك من أول مرة، والسبيد رامب بقى منحنيات مرسومة + 7 أشكال جديدة — والإضافات الجديدة هتوصلك من غير تحديث.",
   "url": "https://enp-studio.github.io/enp/",
   "btn": "شوف الجديد"
  }
